@@ -5,4 +5,4 @@ Project repository
 https://ehealy.georgetown.domains/Yelp/
 
 
-**PLEASE NOTE THIS PROJECT WAS ORIGINALLY BASED ON A REPOSITORY COMPLETED AS PART OF DSAN5000 AT GEORGETOWN UNIVERSITY. IT HAS BEEN COPIED TO MY PERSONAL GITHUB FOR VIEWING PURPOSES.
+**Please note this project was orginally completed as part of DSAN5000 at Georgetown University. The repo has been copied to my personal GitHub for viewing purposes.**
