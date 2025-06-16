@@ -1,0 +1,51 @@
+,name,cuisine,price_range,rating,review_count,neighborhoods,latitude,longitude,zip_code
+0,Simona cafe,Coffee & Tea,N/A,4.2,31,N/A,38.906938,-77.007667,20002
+1,Gregorys Coffee,Coffee & Tea,$$,4.1,118,N/A,38.904301990277055,-77.03993346781644,20036
+2,For Five Coffee Roasters,Coffee & Tea,N/A,3.4,28,N/A,38.901666,-77.04523,20006
+3,Grafika Coffee,Coffee & Tea,N/A,5.0,1,N/A,38.90751524713298,-77.00749430522899,20036
+4,Gregorys Coffee,Coffee & Tea,$$,3.6,112,N/A,38.8959499,-77.02177979999999,20004
+5,Emissary,Coffee & Tea,$$,4.0,537,N/A,38.90951,-77.04638,20036
+6,Little Hat Coffee,Coffee & Tea,N/A,4.9,23,N/A,38.92076,-77.03209,20009
+7,Compass Coffee,Coffee & Tea,$$,4.1,92,N/A,38.916256,-77.022773,20001
+8,PJ's Coffee,Coffee & Tea,$$,4.2,60,N/A,38.99723,-77.0286,20910
+9,Politics and Prose,Bookstores,$$,4.2,379,N/A,38.95547,-77.06965,20008
+10,Emissary,Coffee & Tea,N/A,4.7,11,N/A,38.9038,-77.06351,20007
+11,Peregrine Espresso,Coffee & Tea,$,4.1,112,N/A,38.9087806,-76.9979685,20002
+12,Solid State Books,Bookstores,$$,4.7,68,N/A,38.9003365874488,-76.99679710468791,20002
+13,La Colombe Coffee,Coffee & Tea,$$,3.4,118,N/A,38.9199028015137,-77.0311737060547,20009
+14,South Block,Juice Bars & Smoothies,$$,4.3,43,N/A,38.909488,-77.03226,20005
+15,Tatte Bakery & Cafe,Bakeries,N/A,3.8,20,N/A,38.919,-77.03248,20009
+16,Real Deal Coffee Roasters,Coffee & Tea,N/A,5.0,2,N/A,38.90322745123764,-77.03351732343435,20005
+17,Timgad Cafe,Coffee & Tea,$,4.1,148,N/A,38.89360349731878,-77.02926874631972,20004
+18,For Five Coffee Roasters,Coffee & Tea,N/A,3.4,25,N/A,38.895767,-77.070455,22209
+19,Lapop,Coffee & Tea,$$,4.1,38,N/A,38.9213293230941,-77.0438345815766,20000
+20,D Light Cafe & Bakery,Breakfast & Brunch,$$,4.5,136,N/A,38.92238,-77.04229,20009
+21,Jacob's Coffee House,Coffee & Tea,$,4.3,260,N/A,38.894962310791,-76.9947509765625,20002
+22,Slipstream,Coffee & Tea,$$,3.8,613,N/A,38.9083633422852,-77.031494140625,20005
+23,Cups & Co,Coffee & Tea,$,3.8,6,N/A,38.8922929877525,-77.0069745182991,20002
+24,Baker’s Daughter,Bakeries,N/A,3.6,60,N/A,38.90292,-77.02855,20005
+25,Le Café @ Café du Parc,Coffee & Tea,N/A,3.9,8,N/A,38.89639552510186,-77.03237534110647,20004
+26,Coffee Republic - Metro Center,Coffee & Tea,$$,3.8,25,N/A,38.89788882310091,-77.0293001,20005
+27,Any Day Now,Coffee & Tea,$$,4.3,167,N/A,38.87955,-77.00859,20003
+28,Au Lait Cafe,Cafes,N/A,4.8,22,N/A,38.91148,-77.038747,20009
+29,Un Je Ne Sais Quoi,Desserts,$,4.5,1034,N/A,38.9087384,-77.042577,20036
+30,Marianne’s by DC Central Kitchen,Cafes,N/A,4.6,17,N/A,38.89872,-77.02477,20001
+31,Bluestone Lane West End Café,Coffee & Tea,$$,3.8,535,N/A,38.9038876,-77.0504437,20037
+32,Bluestone Lane,Coffee & Tea,N/A,4.0,110,N/A,38.907868,-77.035532,20005
+33,Italian Bar,Coffee & Tea,N/A,4.5,23,N/A,38.95507613947825,-77.07014,20008
+34,Bad Ass Coffee of Hawaii,Coffee & Tea,$,4.4,105,N/A,38.80256,-77.0721,22314
+35,Midnight Mug,Coffee & Tea,$$,3.5,6,N/A,38.9062348020097,-77.0720740908768,20057
+36,Filter Coffeehouse Foggy Bottom,Coffee & Tea,$$,4.1,140,N/A,38.9011876054021,-77.0442822416078,20006
+37,Aslin Coffee,Coffee & Tea,N/A,4.2,17,N/A,38.91392,-77.03255,20009
+38,Sweet Lemon Cafe,Cafes,N/A,4.6,29,N/A,38.894616627940145,-77.0033396446212,20002
+39,Soleluna,Bakeries,N/A,4.7,118,N/A,38.923114551740255,-77.0423368,20009
+40,maman,Bakeries,$$,4.0,198,N/A,38.90806198959202,-77.06343909032744,20007
+41,Sankofa Video Books & Cafe,Bookstores,$,4.5,167,N/A,38.925561,-77.02315,20001
+42,La Colombe Coffee,Coffee & Tea,$$,4.0,303,N/A,38.901050567627,-77.0201034545898,20001
+43,Vigilante Coffee,Coffee & Tea,$$,4.4,522,N/A,38.9523601112747,-76.9411203080006,20781
+44,Youebe Cafe,Coffee & Tea,N/A,4.9,17,N/A,38.93487647512639,-77.033013,20010
+45,Cool Coffee,Coffee & Tea,N/A,4.8,18,N/A,38.93740867045006,-76.99038404971361,20017
+46,Steam Valve Espresso,Bakeries,N/A,4.7,7,N/A,38.926763398088575,-76.99306875276187,20017
+47,Slipstream,Coffee & Tea,N/A,4.3,14,N/A,38.90128228910673,-77.02877982420969,20005
+48,The Newsroom,Coffee & Tea,$,4.2,25,N/A,38.9135703,-77.0459966,20009
+49,Bourbon Coffee,Coffee & Tea,$,3.9,421,N/A,38.903881,-77.047089,20037

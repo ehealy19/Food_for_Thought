@@ -1,0 +1,51 @@
+,name,cuisine,price_range,rating,review_count,neighborhoods,latitude,longitude,zip_code
+0,Mandu,Korean,$$,3.9,913,N/A,38.9025165013075,-77.0182084994751,20001
+1,Dōgon,Caribbean,N/A,4.4,54,N/A,38.8837453793371,-77.03010416783191,20024
+2,Ruta Ukrainian Restaurant,Ukrainian,$$,4.5,74,N/A,38.88536643920551,-76.996494,20007
+3,K Cup Bap,Korean,N/A,5.0,1,N/A,38.8876753117916,-77.00998009999999,20250
+4,Rice Bar,Noodles,$$,4.5,216,N/A,38.885987,-77.02121,20024
+5,Eatopia Eatery,Ethiopian,N/A,4.9,18,N/A,38.917291,-77.030517,20009
+6,Filomena Ristorante,Italian,$$$,4.2,3585,N/A,38.90443,-77.062546,20007
+7,The Little Grand,Pizza,N/A,4.4,56,N/A,38.90064,-76.99642,20002
+8,Brasserie Liberte,French,$$,4.0,525,N/A,38.906176,-77.064069,20007
+9,The Pub & The People,New American,$$,4.2,328,N/A,38.91233844891041,-77.0093277,20002
+10,Akira Ramen & Izakaya,Ramen,$$,4.3,142,N/A,38.92249411161132,-77.04231139448473,20009
+11,Oh! Naan Indian Kitchen,Indian,N/A,4.2,37,N/A,38.91332,-77.0324,20009
+12,Doi Moi,Vietnamese,$$,3.9,1341,N/A,38.9141018649927,-77.0321429153443,20009
+13,SUNdeVICH,Sandwiches,$$,4.2,643,N/A,38.90776373566,-77.024359310674,20001
+14,Hamilton's Bar & Grill,Sports Bars,$$,3.5,320,N/A,38.8932571411133,-77.0134048461914,20001
+15,Capa Tosta,Italian,N/A,4.5,133,N/A,38.92573,-77.02555,20001
+16,Carbonara,Italian,$$$,4.4,286,N/A,38.880488,-77.106069,22203
+17,Mi Vida,Mexican,$$$,4.0,155,N/A,38.89705,-77.02151,20004
+18,Western Market DC,Public Markets,N/A,4.4,17,N/A,38.90038838392789,-77.04574216157198,20006
+19,Shōtō,Japanese,N/A,3.9,597,N/A,38.903895480129286,-77.03577702891943,20005
+20,Tonari,Japanese,$$,4.1,268,N/A,38.89867,-77.01958,20001
+21,Nostra Cucina,Italian,$$,4.4,140,N/A,38.89496,-77.00118,20002
+22,Gordon Ramsay Fish & Chips,Fish & Chips,$$,3.9,484,N/A,38.87755935795702,-77.02286927401074,20024
+23,Right Proper Brewing Company,American,$$,4.0,769,N/A,38.9153595,-77.021347,20001
+24,West Wing Cafe,Delis,$$,4.3,97,N/A,38.9031659,-77.02551,20001
+25,Bronze,New American,$$$,4.3,180,N/A,38.900002317932426,-76.98868639999999,20002
+26,Off The Record,Bars,$$$,4.1,409,N/A,38.90051,-77.037,20006
+27,Qui Qui DC,Puerto Rican,$$,4.3,153,N/A,38.91072013279398,-77.0216372,20001
+28,Taqueria Al Lado,Tacos,N/A,4.3,56,N/A,38.9004896821002,-76.9899913,20002
+29,Stellina Pizzeria,Pizza,$$,4.1,316,N/A,38.9078,-77.00032,20002
+30,The Haymaker Bar,New American,$$,4.3,86,N/A,38.89993,-76.99205,20002
+31,Menya Hosaki,Ramen,$$,4.7,395,N/A,38.942141,-77.024679,20011
+32,Tatte Bakery and Cafe,Coffee & Tea,$$,4.2,335,N/A,38.9006499,-77.0267439,20001
+33,Falafel inc,Falafel,$,4.6,195,N/A,38.881348,-77.027604,20024
+34,La Cosecha,Cultural Center,$$,4.5,80,N/A,38.909007,-76.9996115,20002
+35,Ambar,Modern European,$$$,4.3,2072,N/A,38.88874,-77.09345,22201
+36,Heat Da Spot,Coffee & Tea,$$,4.8,504,N/A,38.9304254,-77.0232633,20010
+37,Tamashaa,Indian,N/A,4.4,47,N/A,38.929705,-77.032287,20010
+38,The Happy Eatery,Vietnamese,$$,4.1,253,N/A,38.896769,-77.071233,22209
+39,Cafe Fili,Mediterranean,N/A,4.6,129,N/A,38.899059543718536,-77.003305,20002
+40,Succotash Prime,Southern,$$,4.1,1314,N/A,38.89764,-77.02474,20004
+41,Moh Moh Licious,Himalayan/Nepalese,$,4.6,131,N/A,38.98003,-77.02677,20012
+42,King Street Oyster Bar,Seafood,$$,4.0,659,N/A,38.905967,-77.008042,20002
+43,Cornerstone Cafe,Bagels,$,4.0,67,N/A,38.9058227,-77.0349121,20005
+44,Chicken + Whiskey,Venezuelan,$$,4.2,673,N/A,38.913855,-77.032106,20009
+45,Eerkin's Uyghur Cuisine,Noodles,$$,4.3,199,N/A,38.921397,-77.072513,20007
+46,14th St Cafe Asian Bistro,Chinese,$$,4.1,281,N/A,38.90943,-77.0322599,20005
+47,Joia Burger,Burgers,N/A,4.6,58,N/A,38.931568,-77.038251,20010
+48,La Casina,Pizza,$$,4.4,106,N/A,38.88537,-76.99645,20003
+49,Gerrard Street Kitchen,Cocktail Bars,N/A,4.3,76,N/A,38.90790686353725,-77.03531939999809,20005

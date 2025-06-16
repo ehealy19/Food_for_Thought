@@ -1,0 +1,53 @@
+---
+title: "LLM usage log"
+---
+
+This page can serve as a "catch-all" for LLM use cases that don’t involve content creation, such as reformatting your own ideas, commenting code that you wrote, or proofreading text, PDF summarization.
+
+LLM tools were used in the following way for the tasks below:
+
+## Brainstorming
+
+* LLM tools were used to help brainstorm data science questions to relate to our dataset and to understand what unsupervised and supervised tasks could be performed. Overall, LLM used to reformat and refocus our topic and project. 
+* Aided in creating the groupings for the cuisine category manufactured variable.
+
+## Writing: 
+
+* Aiding in understanding and summarizing the literature review articles 
+* Understanding the interpretations of the t-SNE, PCA, and clustering plots
+* help refine the wording on the literature reviewed articles 
+* Help refined the wording on the technical report for data collection and supervsied learning 
+* Help refined the wording on the non-technical report for the key finding, methodolgy, call the action, and conclusion
+* Helped understand outputs from the supervised learning models 
+
+## Code (Mostly using GitHub Copilot to work off own code, but some ChatGPT usage): 
+
+* Code commenting and explanatory documentation 
+* Scatter plot for the missing values (getting the hue to show missing values)
+* Outlier detection using z-score calculation
+* Pie chart plotting
+* Correlation matrix calcultion and heatmap plot
+* Crosstabulation calculations
+* ANOVA testing 
+* 3D interactive plot for K-Means
+* Hierarchical clustering
+* Helped with picking supervised learning models and hyper parameters 
+* Picking hyper paramters for KNN Regressor 
+* adding and explaing RFE 
+* adding MSE and R squared 
+* Helped hyper tune Randon Tree Regressor and make the scatter/line plot
+
+## HTML:
+
+* Helping set up and reformat HTML code from lab 1.1 to create a working About Me page
+
+## Other Citations (these are not LLM, but references):
+
+* Lab 1.1 for About Me HTML
+* Lab 4.1 for kmean_fit function and help with executing k-Means and Silhouette score
+* Lab 4.1 for DBSCAN execution
+* Lab 4.2 for plot_variance_explained function
+* Lab 4.2 for plot_2D function
+* Lab 5.3 for Supervised Learning 
+Getting Started with the Yelp Fusion API. (n.d.). Yelp Developers. https://docs.developer.yelp.com/docs/     fusion-intro
+States, U. (2024). Explore Census Data. Census.gov. https://data.census.gov/profile?q=washington%20dc

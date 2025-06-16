@@ -1,0 +1,51 @@
+,name,cuisine,price_range,rating,review_count,neighborhoods,latitude,longitude,zip_code
+0,Cafe Georgetown,Coffee & Tea,$$,4.1,347,N/A,38.90693280779784,-77.06267278607866,20007
+1,Mikko,Scandinavian,$$,4.3,178,N/A,38.91241,-77.03797,20009
+2,Sylvan Cafe & Bakery,Bakeries,$,4.0,134,N/A,38.915393041304895,-77.0125918,20001
+3,The Board and Brew,Coffee & Tea,$$,4.1,437,N/A,38.9916397586268,-76.93384299123686,20740
+4,Blue Bottle Coffee,Coffee & Tea,N/A,4.5,36,N/A,38.904271349899886,-77.03477090826962,20005
+5,Urban Roast,Coffee & Tea,$$,3.4,921,N/A,38.89800507172392,-77.02491600347251,20001
+6,Chez Lily,Bakeries,N/A,4.2,99,N/A,38.90146942706967,-77.01714902350017,20001
+7,The Coffee Bar,Coffee & Tea,$$,4.0,101,N/A,38.906,-77.0389,20036
+8,The Roost,Coffee & Tea,$$,4.1,135,N/A,38.87980720664,-76.9852322620679,20003
+9,Tatte Bakery & Cafe,Coffee & Tea,N/A,3.9,46,N/A,38.940896489052726,-77.07815025485385,20016
+10,Big Bear Cafe,Cafes,$$,3.3,746,N/A,38.912676,-77.01225,20001
+11,Compass Coffee,Coffee & Tea,N/A,3.8,11,N/A,38.89597,-77.02681,20004
+12,Lavazza,Creperies,N/A,4.0,21,N/A,38.9202,-77.07177,20007
+13,Tryst,Lounges,$$,4.0,1833,N/A,38.9219703674316,-77.042121887207,20009
+14,GW Colonial Bistro,Cafes,$,5.0,2,N/A,38.900132,-77.050792,20052
+15,Blue Bottle Coffee - Union Market,Coffee & Tea,$$,4.0,90,N/A,38.908168,-77.000179,20002
+16,Dolan Coffee,Coffee & Tea,N/A,3.8,8,N/A,38.93616,-77.05916,20008
+17,Compass Coffee,Coffee Roasteries,$$,4.3,113,N/A,38.9079272113141,-77.0635198205313,20007
+18,Bread Furst,Bakeries,$,3.6,633,N/A,38.947456,-77.065943,20008
+19,Cafe Cino,Coffee Roasteries,N/A,5.0,2,N/A,38.91504,-77.04144,20009
+20,Crumbs & Whiskers - Kitten & Cat Cafe,Pet Adoption,N/A,4.6,224,N/A,38.905315280565354,-77.0615058,20007
+21,BPM Coffee & Wine,Wine Bars,N/A,4.1,9,N/A,38.908074,-77.032967,20005
+22,Tatte Bakery & Cafe,Cafes,$$,3.9,91,N/A,38.90088,-77.04791,20037
+23,Creative Grounds DC,Art Classes,N/A,4.7,83,N/A,38.91471,-77.00945,20002
+24,Momo's Cafe,Asian Fusion,$$,4.1,203,N/A,38.91684,-77.0965,20007
+25,Gallery Cafe,Cafes,$$,4.1,28,N/A,38.90060035054428,-77.0324436916465,20005
+26,The Potter's House,Coffee & Tea,$,4.3,253,N/A,38.9250305,-77.0387367,20009
+27,Tatte Bakery & Cafe,Bakeries,$$,4.1,614,N/A,38.905814,-77.047639,20036
+28,Ellē,Cafes,$$,4.0,365,N/A,38.93173,-77.03816,20010
+29,For Five Coffee Roasters,Coffee & Tea,N/A,3.3,13,N/A,38.87662977952411,-77.00637516968166,20003
+30,Bakeshop,Bakeries,$$,4.4,56,N/A,38.90383043575996,-77.063507,20007
+31,Mix and Mingle Coffee Lounge,Coffee & Tea,$$,4.4,34,N/A,38.767,-76.88908,20735
+32,maman,Bakeries,N/A,4.1,44,N/A,38.8746469,-77.004306,20303
+33,Childhood Cafe,Themed Cafes,N/A,4.2,21,N/A,38.91665671032384,-77.03870327015287,20009
+34,Baker’s Daughter,Specialty Food,N/A,3.7,73,N/A,38.9147666,-76.9843567,20002
+35,Tynan Coffee & Tea,Coffee & Tea,$$,3.5,313,N/A,38.9286118597153,-77.0333437273372,20010
+36,La Famosa,Puerto Rican,$$,4.2,422,N/A,38.87476196056468,-77.00001389556692,20003
+37,Qualia Coffee,Coffee & Tea,$,3.9,362,N/A,38.91068,-77.00473,20002
+38,Compass Coffee,Coffee & Tea,N/A,3.9,8,N/A,38.89597,-77.02681,20004
+39,Swing Coffee Roasters,Coffee & Tea,$,4.2,239,N/A,38.898096,-77.039904,20006
+40,Java Nation - Silver Spring,Coffee & Tea,$$,4.3,79,N/A,38.993901,-77.027674,20910
+41,Compass Coffee,Coffee & Tea,$,4.1,123,N/A,38.90104283047646,-77.04142889811735,20006
+42,Bump 'n Grind,Coffee & Tea,$,3.9,238,N/A,38.99465890974005,-77.02470490361658,20910
+43,Bistro Du Jour,French,$$,3.8,231,N/A,38.87957,-77.02532,20024
+44,Bluestone Lane Metro Center Coffee Shop,Coffee & Tea,N/A,3.4,32,N/A,38.898061,-77.029873,20005
+45,Brew On U,Coffee & Tea,N/A,3.3,7,N/A,38.91662413671141,-77.02932879726738,20009
+46,Idido Coffee and Social House,Coffee & Tea,$,4.7,277,N/A,38.86136,-77.08667,22204
+47,Firehook Bakery,Bakeries,$,3.5,371,N/A,38.9112702,-77.043817,20009
+48,Cameo,Coffee & Tea,N/A,4.1,31,N/A,38.87981,-76.98525,20003
+49,Souk,Herbs & Spices,$$,4.0,176,N/A,38.880962,-76.995307,20003

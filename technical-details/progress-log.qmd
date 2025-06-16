@@ -1,0 +1,158 @@
+---
+title: "Progress log"
+---
+
+Tracking our progress and keeping a log of our contributions to the project.
+
+## To-do
+
+* [ ] Explore possible topics by brainstorming with ChatGPT 
+* [ ] Narrow down topic and generate 5 guiding data science questions
+* [ ] Find six related sources for literature review
+* [ ] Find and scrape a relevant data source
+* [ ] Investigate the data and structure to ensure it fits our needs
+* [ ] Create a checklist to keep group on track
+* [ ] Merge the data sources
+* [ ] Clean the combined dataset
+* [ ] Complete EDA
+* [ ] Unsupervised Learning tasks:
+  * [ ] PCA
+  * [ ] t-SNE
+  * [ ] K Means
+  * [ ] DBSCAN
+  * [ ] Hierarchical
+* [ ] Supervised Learning tasks:
+  * [ ] feature selection
+  * [ ] normalize data
+  * [ ] split into training/test sets
+  * [ ] decision tree
+  * [ ] KNN regressor
+  * [ ] random forest
+  * [ ] logistic regression
+* [ ] Report:
+  * [ ] intro
+  * [ ] objective
+  * [ ] key findings
+  * [ ] methodology
+  * [ ] visualization
+  * [ ] societal impact
+  * [ ] call to action
+  * [ ] conclusion
+* [ ] Intrepret results for each section
+* [ ] Introduction and concluding remarks for each section
+* [ ] About Me Page
+* [ ] Stylize and clean Landing Page
+* [ ] Finalize LLM Usage Log
+* [ ] Delete all the instructions
+* [ ] Clean up all sections of the webpage
+* [ ] Render all portions
+* [ ] Make sure Github is up to date
+* [ ] Host on GU Domains
+* [ ] Turn in all necessary submissions to Canvas
+
+## Member-1:
+
+Lizzie Healy
+[About](../about_authors/about.html)
+
+Also, describe a log of their project roles.
+
+**Weekly project contribution log:**
+
+
+**W: 11-13-2024** 
+
+* [x] Meeting with team to discuss potential topic ideas and brainstorm 
+
+**T: 11-19-2024** 
+
+* [x] Meeting to finalize topic, make deadlines, and distribute work
+
+**F: 11-29-2024** 
+
+* [x] Data cleaning and normalization
+
+**M: 12-2-2024** 
+
+* [x] Meeting to look through data and re-group before next steps
+
+**F: 12-6-2024** 
+
+* [x] Complete EDA
+
+**W: 12-11-2024** 
+
+* [x] Work through unsupervised learning, add about me page
+
+**T: 12-12-2024** 
+
+* [x] Meeting to discuss results of supervised/unsupervised learning
+
+**F: 12-13-2024** 
+
+* [x] Literature Review write-up, work on logs, finalize about me page
+
+**S: 12-14-2024** 
+
+* [x] Report sections
+
+**S: 12-15-2024** 
+
+* [x] Meeting to discuss any concerns/finalize website
+
+**M: 12-16-2024** 
+
+* [x] Final touches, render all sections, host on GU Domains
+
+
+## Member-2
+
+Rachna Rawalpally
+[About](../about_authors/about.html)
+
+**Weekly project contribution log:**
+
+
+**W: 11-13-2024** 
+
+* [x] Meeting with team to discuss potential topic ideas and brainstorm 
+
+**T: 11-19-2024** 
+
+* [x] Meeting to finalize topic, make deadlines, and distribute work
+
+**F: 11-22-2024** 
+
+* [x] Complete data scraping and collection
+
+**M: 12-2-2024** 
+
+* [x] Meeting to look through data and re-group before next steps
+
+**W: 12-11-2024** 
+
+* [x] Work through supervised learning
+
+**T: 12-12-2024** 
+
+* [x] Meeting to discuss results of supervised/unsupervised learning
+
+**F: 12-13-2024** 
+
+* [x] Data collection, supervised learning webpage writeups
+
+**S: 12-14-2024** 
+
+* [x] Report sections
+
+**S: 12-15-2024** 
+
+* [x] Finalize about me section
+
+**S: 12-15-2024** 
+
+* [x] Meeting to discuss any concerns/finalize website
+
+**M: 12-16-2024** 
+
+* [x] Final touches, render all sections, host on GU Domains

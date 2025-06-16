@@ -1,0 +1,51 @@
+,name,cuisine,price_range,rating,review_count,neighborhoods,latitude,longitude,zip_code
+0,Pitango Gelato & Coffee,Coffee & Tea,$$,4.2,1040,N/A,38.8950575888157,-77.0218540728092,20004
+1,Capital One Café,Coffee & Tea,N/A,4.3,24,N/A,38.86723169266498,-76.98846836787685,20020
+2,Mah-Ze-Dahr Bakery,Bakeries,$$,4.3,137,N/A,38.858643511332744,-77.04947113154941,22202
+3,Junction Bistro Bar and Bakery,Bakeries,$$,4.2,95,N/A,38.894935,-77.0022589,20002
+4,Coffee Alley,Coffee & Tea,N/A,4.0,1,N/A,38.898571,-77.0217743,20001
+5,Gregorys Coffee,Bakeries,$$,3.8,87,N/A,38.87698839999999,-77.0044963,20003
+6,Atrium Cafe,Cafes,$,3.8,106,N/A,38.8842769,-77.018194,20024
+7,Mitsitam Cafe,American,$$,3.5,538,N/A,38.8881838301927,-77.0168634722831,20560
+8,Cafe Levantine,Lebanese,N/A,4.7,29,N/A,38.93545157834827,-77.17960462998346,22101
+9,Capital One Café,Banks & Credit Unions,N/A,4.0,63,N/A,38.904992,-77.062633,20007
+10,Zeleno,Sandwiches,$$,4.3,95,N/A,38.911483,-77.044128,20009
+11,Le Caprice DC,Cafes,$,3.5,349,N/A,38.9328151,-77.032744,20010
+12,Union Kitchen,Coffee & Tea,$$,4.1,95,N/A,38.9067618304296,-77.0236993143936,20001
+13,Bluestone Lane,Coffee & Tea,N/A,3.3,25,N/A,38.894307822223645,-77.02973926568083,20004
+14,Corella Café and Lounge,Coffee & Tea,$$,3.9,39,N/A,38.98366,-77.09295,20814
+15,Casey's Coffee & Sandwiches,Coffee & Tea,$$,2.9,25,N/A,38.8834401,-77.0160269,20024
+16,Union Kitchen Grocery,Coffee & Tea,$$,4.1,16,N/A,38.91209,-77.00369,20002
+17,L.A. Burdick Handmade Chocolates,Chocolatiers & Shops,N/A,4.3,89,N/A,38.90718,-77.06305,20007
+18,Point Chaud Cafe & Crepes,Creperies,$$,3.7,57,N/A,38.920154,-77.071873,20007
+19,Vigilante Coffee,Coffee & Tea,$$,4.3,199,N/A,38.9920351893388,-76.93384454461649,20740
+20,Three Whistles,Shared Office Spaces,$,4.4,110,N/A,38.88956,-77.0912,22201
+21,Adulis Coffee and Roastery,Coffee & Tea,N/A,4.6,7,N/A,38.9853673,-77.0273553,20910
+22,Timgad Café,Cafes,N/A,0.0,0,N/A,38.89708,-77.01079,20001
+23,Café du Parc,French,$$,3.4,496,N/A,38.8964914630626,-77.0326561039029,20004
+24,Morsel's,Coffee & Tea,$$$,3.0,3,N/A,38.922855072868,-77.0538241064872,20008
+25,Sheba Café,Cafes,N/A,4.6,8,N/A,38.93461,-77.0331999,20010
+26,Licht Cafe,Cafes,N/A,4.9,11,N/A,38.9168369,-77.03546067607505,20009
+27,Blank Street,Coffee & Tea,N/A,3.4,18,N/A,38.90616,-77.06301,20007
+28,Colada Shop,Coffee & Tea,$$,4.0,68,N/A,38.907064,-77.043662,20036
+29,Commonwealth Joe,Cafes,$,4.6,471,N/A,38.862669,-77.054934,22202
+30,Uptown Cafe,Coffee & Tea,$,3.6,83,N/A,38.905458,-77.005096,20002
+31,Morning My Day,Bakeries,$,4.8,27,N/A,38.99811295855087,-77.03131099614086,20910
+32,Caseys Coffee,Coffee & Tea,N/A,3.5,10,N/A,38.89984,-77.00754,20002
+33,Merriweather Cafe,Cafes,N/A,3.8,12,N/A,38.94364,-77.05262,20008
+34,Soricha Tea & Theater,Coffee & Tea,$$,4.6,469,N/A,38.8330300196999,-77.1914365769644,22003
+35,Peet's Coffee,Coffee & Tea,$$,3.8,108,N/A,38.89923,-77.03998,20006
+36,La Bohemia Bakery,Bakeries,$,4.3,258,N/A,39.057995,-77.112355,20852
+37,Milk + Honey Café,Coffee & Tea,N/A,3.2,9,N/A,38.8847507,-77.0174558,20472
+38,Baker’s Daughter,Breakfast & Brunch,N/A,3.6,23,N/A,38.904533,-77.062452,20007
+39,Turkish Coffee Lady,Coffee & Tea,$$,4.6,187,N/A,38.805617,-77.050411,22314
+40,Cortado Cafe,Cafes,$$,4.6,116,N/A,38.81317,-77.1110877,22304
+41,Tiger Sugar Boba Bubble Tea shop DC,Bubble Tea,$$,3.9,23,N/A,38.92207696395166,-76.99656949999999,20002
+42,Call Your Mother Deli - Georgetown,Delis,$$,4.4,382,N/A,38.9076174,-77.068837,20007
+43,Cafe Integral,Coffee & Tea,$$,3.7,23,N/A,38.91604,-77.04687,20009
+44,Black Coffee,Coffee & Tea,$$,4.1,106,N/A,38.9179,-77.09682,20007
+45,Coffee Nature,Coffee & Tea,$,4.2,159,N/A,38.9544799,-77.0831199,20016
+46,Bread & Chocolate,Breakfast & Brunch,$$,3.3,399,N/A,38.90566,-77.05045,20037
+47,Le Bon Cafe,Coffee & Tea,$$,3.7,235,N/A,38.8872604,-77.0033569,20003
+48,Mo Mo Bakery,Bakeries,$,3.9,16,N/A,39.0521313,-77.0510259,20902
+49,The Hill Cafe,Coffee & Tea,N/A,4.3,56,N/A,38.8910737123269,-76.9833906957008,20002

@@ -1,0 +1,65 @@
+---
+title: ""
+---
+
+<h1 style="text-align:center;"> Food for Thought: A Joint Investigating of the Socioeconomic Food Gap and Yelp Ratings in the DC area </h1>
+
+<h3 style="text-align:center;">
+![](assets/yelp.png){width=200}
+![](assets/map.png){width=200}
+</h3>
+
+### Summary of Topic
+Washington, DC is a vibrant and diverse city, home to everyone from dignitaries to presidents, making it a true hub for international cuisine. From upscale fine dining establishments to hidden gems and hole-in-the-wall eateries, DC offers a culinary experience for every palate. This project explores the restaurant landscape of DC, investigating the features that make its dining scene unique and analyzing how socioeconomic factors influence Yelp ratings.
+
+### Significance
+The most significant impact of this study could be its potential to help small, independently-owned businesses. Launching and maintaining a successful restaurant is notoriously challenging, and in a dynamic, ever-changing city like Washington, DC, the difficulties can be even greater. By analyzing patterns and identifying the key features that contribute to success, this research could offer valuable insights to restaurateurs. These findings might help small business owners achieve stability and profitability without compromising the quality of their food. Supporting these businesses not only fosters economic growth but also preserves the cultural and culinary diversity that makes DC’s food scene unique.
+
+### Questions to Explore
+1.  What factors are most important to a high Yelp Rating score?
+2. Do better neighborhoods (measured by median income) generally have better restaurants (measured by Yelp ratings)?
+3. Are certain types of restaurants more likely to be rated higher on yelp?
+4. Does price of the restaurant factor into Yelp rating?
+5. Is it possible to predict the Yelp rating of a restaurant based on its features?
+
+
+### Literature review
+
+As more businesses have begun interacting with online marketing, Yelp and similar reviewing sites have grown in popularity. This phenomenom has lead many to attempt to understand the ratings and reviews habits of consumers and to go so far as predicting which establishments will receive higher ratings.
+
+In "Characterizing Non-Chain Restaurants' Yelp Star-Ratings: Generalizable Findings from a Representative Sample of Yelp Reviews" Keller and Kostromitina attempt to investigate whether Yelp star ratings are characterized by different criteria, ie is there a particular reason that restaurants are given the particular rating and is there a consistent pattern across these restaurants. To achieve this goal, the authors took data from Yelp.com that totaled 54,000 reviews on restaurants that were categorized as non-chain restaurants. The dataset includes the Yelp rating of the restaurant, the reviews, and other metadata about the specific restaurant. They then employed multiple correspondance analysis (MCA) to investigate the underlying structures and patterns of the data. They found that the service, food quality, and the overall environment of a restaurant does, in fact, matter for the Yelp rating of a particular restaurant. Further, they found that this effect was varied across the different star ratings for Yelp. For the 1 to 2 star range, the authors found that the most important factor contributing to the rating was the wait time for food. For the 3 star establishments, the most important factor was the quality of the food and for the 4 to 5 star rating range the most important factor was the ability to cultivate a positive customer experience, which is a combination of the wait time, the food quality, and the service.
+
+In "Yelp Review Rating Prediction: Machine Learning and Deep Learning Models", Liu attempts to predict the yelp rating score based on the cumulative sentiment of the Yelp reviews for restaurants. The author begins by utilizing the Yelp Open dataset, which provides data on the businesses that are listed on the website. This dataset is subsetted to include only restaurants, which leads to 63,944 review observations. The author notes that the dataset is highly skewed due to the restaurants with more reviews, generally having a higher rating (in the 4-5 star yelp rating range). From these reviews, two vectorizer techniques are employed, TF-IDF and a count vectorizer. The author determines that the TF-IDf is found to be a better vectorizer for the review text based on evaluation metrics. From here, four machine learning models are trained and testing on the TF-IDF data: Naive Bayes, logistic regression, random forest, and linear support vector machine. In addition, four transformer models are trained and tested on the text data: BERT, DistillBERT, XLNet, and RoBERTa. Evaluation metrics including accuracy, F1-score, and confusion matrics are utilized to evaluate all of the models. The end result is that the model are able to partially reliably predict the Yelp rating score. Particularly, there was foudn to be a 64% accuracy score for prediction using the Machine Learning techniques and a 70% accuracy score for rating prediction using the transformer techniques. 
+
+The study "Applications of Machine Learning to Predict Yelp Ratings" by Kyle Carbon, Kacyn Jujii, and Parasanth Veerina investigates factors influencing Yelp ratings and business performance, utilizing data from Phoenix, AZ. The authors employ K-means clustering to evaluate the role of location by measuring distances to shopping malls and popular landmarks. They conduct statistical tests to identify significant features and implement machine learning models, including logistic regression, SVM, random forests, and decision trees, achieving an average accuracy of 45%. The findings highlight that while factors like location, price range, and availability of take-out services significantly impact ratings, the most critical determinant is review sentiment. Notably, different features were found to influence ratings for specific business types; for example, speed is prioritized for fast-food establishments, whereas quality is emphasized for upscale restaurants. Sentiment classification emerged as the most predictive feature, indicating that customer review sentiment is the strongest indicator of business ratings on Yelp.
+
+On the flip side of this and acting from a more critical persepctive, some have tried to understand whether these online ratings actually hold any weight. They have investigated if predicting the online rating system will actually lead to real-world pay off.
+
+"Analysis of Yelp Reviews" examines the role of reviews and ratings in predicting business success, focusing specifically on restaurants in college towns. The authors highlight the unique characteristics of college-town restaurants, noting their relatively short average lifespan of around four years. The study analyzes data from 20 different college campuses over a 7-year period and employs mathematical modeling, including differential equations, to understand Yelp reviews. Key findings include the observation that the relationship between the number of reviews and ratings follows a power-law distribution. Additionally, restaurants with a higher number of reviews tend to cluster geographically. The researchers also analyze the running average rating of all restaurants in a college town over time, alongside detailed case studies of the most-reviewed restaurant in each town. The study reveals that initial reviews can significantly impact a restaurant's trajectory, but these effects stabilize as more reviews accumulate. They attribute some trends to college students' unique dining habits. For example, pizza restaurants consistently rank highly and are the most common across towns, while university-sponsored dining establishments often receive lower ratings. Interestingly, the types of top-rated ethnic restaurants vary between towns, reflecting local cultural preferences.
+
+In another branch of online review research, there has emerged literature that examines the topic from an economical standpoint. They look at the larger picture of determining how restaurants impact the local economy. By understanding how Yelp reviews impact an establishment and how that establishment impacts the economy overall, they are, by proxy, examining the role of online reviews on the local economy. 
+
+Kuang (2017) attempted to look at whether the quality of consumption anemities (ie restaurants) have a significant impact on the surronding local economy. In the paper "Does Quality Matter in Local Consumption Amenities? An Empirical Investigation with Yelp", the author utilized housing data from the D.C. Office of Tax and Revenue Computer Assisted Mass Appraisal Database coupled with restaurant data collected from Yelp.com to investigate the effect on housing prices of quality restaurants. The quality of a restaurant was measured by consumer ratings and price estimates from Yelp. To investigate this guiding question, Kuang employed econometric techniques including regression analysis, neighborhood-year fixed effects, and difference-in-difference (DID) estimation. The DID estimation was done before and after the popularization of Yelp in the DC area across time periods and restaurant measures. With the DID, the author wanted to determine whether information on restaurant amenitieis matters and particularly what type of information matters. In addition, robustness checks and falsification were employed to see if the results were robust to a restricted housing sample, a different choice of radius, including other local attributes, and utilizing a smaller timeframe. The end result was that highly rated restaurants do, in fact, attract customers, which generates revenues, and positively impacts the local economy. Further, that Yelp reviews do act as a reliable signal of quality for a restaurant. They conclude that there is a positive effect on housing prices due to both the quantity and quality of restaurants in a given area, but caution this do not imply causation and building quality anemities will not increase housing prices. 
+
+In a 2019 article, Luo and Xu delve into the importance of Yelp reviews and their role in the restaurant industry, highlighting the challenges restaurants face, such as rising food prices, high labor costs, and a failure rate exceeding 60% within the first three years. It underscores the economic significance of the restaurant industry, noting its contribution to local economic growth and employment rates. The article also emphasizes the critical role of online reviews, citing that 94% of people choose a restaurant based on reviews. The study focuses on two key aspects for machine learning models: dining features of restaurants and customer reviews. It employs models like Naive Bayes and Naive Bayes combined with Support Vector Machines (SVM), with SVM achieving the highest F1 accuracy at 71%. The research identifies four essential features influencing customer satisfaction: taste, experience, value, and location. It observes that with an increasing number of reviews, the quality of food emerges as the most important factor for customers, followed by service. Negative reviews are primarily linked to concerns about price or value. This work explores the intersection of natural language processing (NLP) and machine learning in analyzing Yelp reviews to predict business success, offering valuable insights into customer preferences and the factors driving restaurant performance
+
+
+**References**:
+
+- Characterizing Non-Chain Restaurants' Yelp Star-Ratings: Generalizable Findings from a Representative Sample of Yelp Reviews
+  - Keller, D., & Kostromitina, M. (2020). Characterizing non-chain restaurants’ Yelp star-ratings: Generalizable findings from a representative sample of Yelp reviews. International Journal of Hospitality Management, 86, 102440.
+
+- Yelp Review Rating Prediction: Machine Learning and Deep Learning Models
+  - Liu, Z. (2020). Yelp review rating prediction: Machine learning and deep learning models. arXiv preprint arXiv:2012.06690.
+
+- Applications of Machine Learning to Predict Yelp Ratings
+   - Carbon, K., Fujii, K., & Veerina, P. (2014). Applications of machine learning to predict Yelp ratings. 2014.
+
+- Analysis of Yelp Reviews
+   - Hajas, P., Gutierrez, L., & Krishnamoorthy, M. S. (2014). Analysis of yelp reviews. arXiv preprint arXiv:1407.1443.
+
+- Does Quality Matter in Local Consumption Amenities? An Empirical Investigation with Yelp
+  - Kuang, C. (2017). Does quality matter in local consumption amenities? An empirical investigation with Yelp. Journal of Urban Economics, 100, 1-18.
+
+- Predicting the Helpfulness of Online Restaurant Reviews Using Different Machine Learning Algorithms: A Case Study of Yelp
+   - Luo, Y., & Xu, X. (2019). Predicting the helpfulness of online restaurant reviews using different machine learning algorithms: A case study of yelp. Sustainability, 11(19), 5254.

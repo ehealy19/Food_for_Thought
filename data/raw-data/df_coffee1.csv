@@ -1,0 +1,51 @@
+,name,cuisine,price_range,rating,review_count,neighborhoods,latitude,longitude,zip_code
+0,La Colombe Coffee,Coffee & Tea,$$,4.3,554,N/A,38.9064687179387,-77.0249282196164,20001
+1,A Baked Joint,Coffee & Tea,$$,4.4,2544,N/A,38.902465,-77.017275,20001
+2,Ebenezers Coffeehouse,Coffee & Tea,$$,4.1,574,N/A,38.8971287119908,-77.0032858099355,20002
+3,Dua Dc Coffee,Coffee & Tea,$$,4.7,324,N/A,38.90191,-77.03328,20005
+4,Pluma By Bluebird Bakery,Bakeries,$$,4.2,203,N/A,38.9079775974755,-77.0003633854441,20002
+5,Roasting Plant,Coffee & Tea,N/A,4.4,24,N/A,38.906252938698536,-77.04122670357958,20036
+6,The Coffee Bar,Coffee & Tea,$$,4.1,348,N/A,38.9143154,-77.0282699067459,20009
+7,Three Fifty Bakery and Coffee Bar,Desserts,$$,4.5,349,N/A,38.91275337449321,-77.0382126,20009
+8,Baked & Wired,Bakeries,$$,4.4,5248,N/A,38.9039128490789,-77.0602477800762,20007
+9,Tatte Bakery and Cafe,Coffee & Tea,$$,4.2,335,N/A,38.9006499,-77.0267439,20001
+10,The Roasted Boon,Coffee & Tea,$$,4.2,79,N/A,38.91045026300734,-77.02673465644715,20001
+11,Bitty & Beau's Coffee,Coffee & Tea,N/A,4.8,59,N/A,38.90534711913507,-77.06319180921416,20007
+12,Nativo Coffee Shop,Coffee & Tea,N/A,4.6,16,N/A,38.90227,-77.04313,20006
+13,Dolcezza,Coffee & Tea,$$,4.2,566,N/A,38.900264,-77.024192,20001
+14,maman,Coffee & Tea,$$,4.0,74,N/A,38.89942720315017,-77.02447724974593,20036
+15,Compass Coffee,Coffee Roasteries,$$,4.3,76,N/A,38.901542,-77.032095,20005
+16,The Ministry,Coffee & Tea,$$,4.3,111,N/A,38.8978502,-77.011664,20001
+17,Bluestone Lane - Logan Circle Café,Coffee & Tea,$$,4.4,100,N/A,38.9125855295955,-77.0311773,20009
+18,Rue Cafe,Coffee & Tea,N/A,4.9,47,N/A,38.93887,-77.03306,20011
+19,Colada Shop,Coffee & Tea,$$,4.0,336,N/A,38.8791,-77.02396,20024
+20,The Village Cafe,Coffee & Tea,N/A,4.6,79,N/A,38.90819,-76.9987,20002
+21,Swings Coffee,Coffee & Tea,$$,4.4,135,N/A,38.8977603,-77.0320949,20005
+22,Unido,Coffee Roasteries,N/A,4.1,40,N/A,38.91905997895915,-77.024541,20001
+23,Peregrine Espresso,Coffee & Tea,$$,4.3,530,N/A,38.88553632545,-76.996396911717,20003
+24,Unido Panama Coffee Roasters,Coffee & Tea,$$,4.1,67,N/A,38.908986,-76.999617,20002
+25,Cafe Manet,Coffee & Tea,N/A,5.0,2,N/A,38.8938134812147,-77.03089014451824,20004
+26,Tatte Bakery & Cafe,Breakfast & Brunch,$$,4.0,212,N/A,38.89933,-77.01466,20001
+27,La Colombe Coffee,Coffee & Tea,$$,4.4,57,N/A,38.9053473599814,-77.0026682420707,20002
+28,Dolcezza,Coffee & Tea,N/A,3.9,45,N/A,38.887983,-77.022854,20024
+29,Colada Shop,Coffee & Tea,$$,4.0,603,N/A,38.91573411332448,-77.0323945288129,20009
+30,Nothing Fancy,Coffee & Tea,N/A,4.5,17,N/A,38.88072034644561,-76.9951997,20003
+31,Tatte Bakery & Cafe,Coffee & Tea,$$,4.3,98,N/A,38.90124763268285,-77.03886612004283,20006
+32,Blank Street Coffee,Coffee & Tea,N/A,4.4,8,N/A,38.905507,-77.04817,20037
+33,Sidamo Coffee and Tea,Coffee & Tea,$,4.3,525,N/A,38.89994,-76.9999,20002
+34,maman,Bakeries,N/A,3.8,86,N/A,38.90928613650869,-76.99926470183505,20002
+35,Gute Leute,Coffee & Tea,$$,4.6,161,N/A,38.88027577013322,-77.11487993038452,22203
+36,Compass Coffee,Coffee & Tea,$,4.2,420,N/A,38.9105988,-77.0215683,20001
+37,Compass Coffee,Coffee & Tea,$$,4.2,307,N/A,38.89714,-77.02100676404511,20004
+38,Büna Coffeehouse,Coffee & Tea,$$,4.7,161,N/A,38.9441184997559,-77.0264511108398,20011
+39,Tatte Bakery & Cafe,Cafes,$$,4.1,378,N/A,38.90761,-77.04192,20036
+40,Cafe U,Coffee & Tea,$,4.7,44,N/A,38.91713797573817,-77.02654885449415,20001
+41,Yellow The Cafe,Bakeries,$$,4.5,330,N/A,38.909471,-77.064615,20007
+42,Emissary Coffeehouse,Cafes,N/A,4.1,44,N/A,38.913684,-77.045085,20009
+43,The Royal,Coffee & Tea,$$,4.2,401,N/A,38.9150428771973,-77.0185775756836,20001
+44,Puro Gusto Cafe,Coffee & Tea,$,3.9,94,N/A,38.89748396923004,-77.03134942799807,20004
+45,Simona Cafe,Coffee & Tea,$$,4.5,119,N/A,38.89075,-77.08895,22201
+46,Janti Cafe,Cafes,N/A,4.6,42,N/A,38.91528,-77.06773,20007
+47,For Five Coffee Roasters,Coffee & Tea,$$,3.7,131,N/A,38.9034384,-77.0457423,20036
+48,Doubles,Coffee & Tea,$,4.4,205,N/A,38.9296029509668,-77.0235609626942,20010
+49,Maketto,Cafes,$$$,4.1,1274,N/A,38.89990414059217,-76.98666519999999,20002

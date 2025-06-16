@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.54">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Unsupervised Learning – DSAN-5000: Project</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../assets/gu-logo.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">DSAN-5000: Project</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../report/report.html"> 
+<span class="menu-text">Report</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about_authors/about.html"> 
+<span class="menu-text">About</span></a>
+  </li> 
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-technical-details" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Technical details</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-technical-details">    
+        <li>
+    <a class="dropdown-item" href="../../technical-details/data-collection/main.html">
+ <span class="dropdown-text">Data-collection</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../technical-details/data-cleaning/main.html">
+ <span class="dropdown-text">Data-cleaning</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../technical-details/eda/main.html">
+ <span class="dropdown-text">Exploratory Data Analysis</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../technical-details/unsupervised-learning/main.html">
+ <span class="dropdown-text">Unsupervised Learning</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../technical-details/supervised-learning/main.html">
+ <span class="dropdown-text">Supervised Learning</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../technical-details/progress-log.html">
+ <span class="dropdown-text">Progress Log</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../technical-details/llm-usage-log.html">
+ <span class="dropdown-text">LLM usage Log</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#brief-introduction" id="toc-brief-introduction" class="nav-link active" data-scroll-target="#brief-introduction">Brief Introduction</a></li>
+  <li><a href="#overview-of-methods" id="toc-overview-of-methods" class="nav-link" data-scroll-target="#overview-of-methods">Overview of Methods</a></li>
+  <li><a href="#code" id="toc-code" class="nav-link" data-scroll-target="#code">Code</a>
+  <ul class="collapse">
+  <li><a href="#dimensionality-reduction" id="toc-dimensionality-reduction" class="nav-link" data-scroll-target="#dimensionality-reduction">Dimensionality Reduction</a>
+  <ul class="collapse">
+  <li><a href="#pca" id="toc-pca" class="nav-link" data-scroll-target="#pca">PCA</a></li>
+  <li><a href="#t-sne" id="toc-t-sne" class="nav-link" data-scroll-target="#t-sne">t-SNE</a></li>
+  <li><a href="#comparison" id="toc-comparison" class="nav-link" data-scroll-target="#comparison">Comparison</a></li>
+  </ul></li>
+  <li><a href="#clustering-methods" id="toc-clustering-methods" class="nav-link" data-scroll-target="#clustering-methods">Clustering Methods</a>
+  <ul class="collapse">
+  <li><a href="#k-means" id="toc-k-means" class="nav-link" data-scroll-target="#k-means">K-Means</a></li>
+  <li><a href="#dbscan" id="toc-dbscan" class="nav-link" data-scroll-target="#dbscan">DBSCAN</a></li>
+  <li><a href="#hierarchical-clustering" id="toc-hierarchical-clustering" class="nav-link" data-scroll-target="#hierarchical-clustering">Hierarchical Clustering</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#summary-and-intepretation" id="toc-summary-and-intepretation" class="nav-link" data-scroll-target="#summary-and-intepretation">Summary and Intepretation</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Unsupervised Learning</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="brief-introduction" class="level1">
+<h1>Brief Introduction</h1>
+<p>In this section we will employ dimensionality reduction techniques and clustering methods. These will include principal component analysis (PCA), t-distributed stochastic neighbor embedding (t-SNE), K-Means, DBSCAN, and hierarchical clustering. The objective is to explore the different methods, investigate the dataset further, and understand any consistent patterns that may help answer our guiding Data Science questions..</p>
+</section>
+<section id="overview-of-methods" class="level1">
+<h1>Overview of Methods</h1>
+<ul>
+<li>Principal Component Analysis (PCA) is used to reduce the dimensionality of a dataset. It uses statistical techniques to find the features that are most important to the dataset. PCA will yield the projection of the variables onto the first two principal components (their span), which represent the directions of maximum variance. This can then be represented visually to understand the linear relationships within the data.
+<ul>
+<li>n_components: number of components to keep</li>
+</ul></li>
+<li>t-distributed Stochastic Neighbor Embedding (t-SNE) is a technique for dimensionality reduction used for visualizing high-dimensional data. It is often used to visualize the results of clustering algorithms. The plot of the t-SNE results will show points that have similar profiles or similar attributes close together. These points are then grouped into clusters. It is used to see if clusters exist and how defined and separated these clusters may be within the data.
+<ul>
+<li>n_components: number of components to keep</li>
+<li>perplexity: manages the balance of the global and local structures</li>
+</ul></li>
+<li>K-Means Clustering works to minimize the within cluster variance in order to partition data into k-clusters. This is done by finding the centroid closest to a point, assinging the point to that centroid, calculating the new centroids, and repeating until the centroid stop shifting. It helps to find patterns within unlabeled data.
+<ul>
+<li>n_clusters: number of clusters to form</li>
+</ul></li>
+<li>Density-based spatial clustering (DBSCAN) is a density based clustering method that groups points together that have a lot of nearby neighboring points. It is useful to find clusters within data that are non-linear in shape.
+<ul>
+<li>eps: max distance allowed between two points to be considered a neighbor</li>
+<li>min_samples: number of samples to be considered a cluster</li>
+</ul></li>
+<li>Hierarchical clustering is a clustering technique that creates groups of data that are nested (ie in a hierarchical structure). It does this iteratively by breaking the dataset into large groups and continuously breaking those large groups into more groups, creating a branching structure.
+<ul>
+<li>inputs: dataset and method</li>
+</ul></li>
+</ul>
+</section>
+<section id="code" class="level1">
+<h1>Code</h1>
+<div id="cell-4" class="cell" data-execution_count="384">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.decomposition <span class="im">import</span> PCA</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> StandardScaler</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.manifold <span class="im">import</span> TSNE</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.preprocessing <span class="im">import</span> StandardScaler</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.cluster <span class="im">import</span> KMeans</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.cluster <span class="im">import</span> DBSCAN</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.cluster <span class="im">import</span> AgglomerativeClustering</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.cluster <span class="im">import</span> SpectralClustering</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> silhouette_score</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> calinski_harabasz_score</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> mpl_toolkits.mplot3d <span class="im">import</span> Axes3D</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.cluster.hierarchy <span class="im">import</span> dendrogram, linkage, fcluster</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-5" class="cell" data-execution_count="385">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># reading in the data</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>yelp_zip <span class="op">=</span> pd.read_csv(<span class="st">"../data-cleaning/clean_yelp_zip.csv"</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>cols_to_drop <span class="op">=</span> <span class="st">"Unnamed: 0"</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>yelp_zip <span class="op">=</span> yelp_zip.drop(columns<span class="op">=</span>cols_to_drop)  <span class="co"># dropping the unnecessary columns</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(yelp_zip.head(<span class="dv">5</span>)) <span class="co"># checking the variables</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Median_Income  zip_code                        name       cuisine  \
+0         133211   20001.0              Compass Coffee  Coffee &amp; Tea   
+1         133211   20001.0  Sankofa Video Books &amp; Cafe    Bookstores   
+2         133211   20001.0           La Colombe Coffee  Coffee &amp; Tea   
+3         133211   20001.0        Sylvan Cafe &amp; Bakery      Bakeries   
+4         133211   20001.0                 Urban Roast  Coffee &amp; Tea   
+
+   price_range  rating  review_count   latitude  longitude  price cuisine_cat  
+0            2     4.1          92.0  38.916256 -77.022773   20.5       cafes  
+1            1     4.5         167.0  38.925561 -77.023150    5.0       cafes  
+2            2     4.0         303.0  38.901051 -77.020103   20.5       cafes  
+3            1     4.0         134.0  38.915393 -77.012592    5.0       cafes  
+4            2     3.4         921.0  38.898005 -77.024916   20.5       cafes  </code></pre>
+</div>
+</div>
+<section id="dimensionality-reduction" class="level2">
+<h2 class="anchored" data-anchor-id="dimensionality-reduction">Dimensionality Reduction</h2>
+<section id="pca" class="level3">
+<h3 class="anchored" data-anchor-id="pca">PCA</h3>
+<div id="cell-8" class="cell" data-execution_count="386">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Principal Component Analysis (PCA)</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># pre-processing to use data in PCA</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>numeric_yelp <span class="op">=</span> yelp_zip.drop(columns<span class="op">=</span>[<span class="st">'name'</span>, <span class="st">'cuisine'</span>, <span class="st">'cuisine_cat'</span>]) <span class="co"># keeping only numeric variables</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>scaler <span class="op">=</span> StandardScaler() <span class="co"># initializing a scaler</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>yelp_scaled <span class="op">=</span> scaler.fit_transform(numeric_yelp) <span class="co"># standardizing the variables</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>pca <span class="op">=</span> PCA(n_components<span class="op">=</span><span class="dv">8</span>) <span class="co"># initiating a pca </span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>yelp_pca <span class="op">=</span> pca.fit_transform(yelp_scaled) <span class="co"># reducing dimensionality</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co"># explained variance to determine optimal number of features:</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_variance_explained(pca):</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""helper function to plot explained variance from lab 4.2"""</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># visualize variance explained by PCA components</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(pca.explained_variance_ratio_[<span class="dv">0</span>:<span class="dv">10</span>])</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(np.cumsum(pca.explained_variance_ratio_[<span class="dv">0</span>:<span class="dv">10</span>]))</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># plot explained variance ratio</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>    fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>    ax.plot(<span class="bu">range</span>(<span class="dv">1</span>, <span class="bu">len</span>(pca.explained_variance_ratio_)<span class="op">+</span><span class="dv">1</span>), pca.explained_variance_ratio_, marker<span class="op">=</span><span class="st">'o'</span>)</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>    ax.<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">"number of components"</span>, ylabel<span class="op">=</span><span class="st">"explained variance ratio"</span>)</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>    plt.show()</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># plot cumulative sum of explained variance</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>    fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>    ax.plot(<span class="bu">range</span>(<span class="dv">1</span>, <span class="bu">len</span>(pca.explained_variance_ratio_)<span class="op">+</span><span class="dv">1</span>), np.cumsum(pca.explained_variance_ratio_), marker<span class="op">=</span><span class="st">'o'</span>)</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>    ax.<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">"number of components"</span>, ylabel<span class="op">=</span><span class="st">"cumulative explained variance"</span>)</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>    plt.show()</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>plot_variance_explained(pca)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[0.26763243 0.18944621 0.15147403 0.13711514 0.11630842 0.08958895
+ 0.04648898 0.00194583]
+[0.26763243 0.45707864 0.60855267 0.74566781 0.86197623 0.95156518
+ 0.99805417 1.        ]</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="main_files/figure-html/cell-4-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="main_files/figure-html/cell-4-output-3.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Here we have plotted the explained variance versus the number of components and the cumulative explained variance versus the number of components. These plots together are meant to help choose the number of components to utilize in intializing a PCA object. Generally, we look for an “elbow point” in the first plot, where the explained variance begins to taper off, however, the plot lacks a true elbow point, thus, we will look mostly at the cumulative explained variance plot for out decision. Based on the first plot, we are looking somewhere in the 4-7 components, range and then we must decide how we want to balance the total variance retained and the model complexity. We are going to decide to choose 6 components to retain about 95% of the variance and proceed with the principal component analysis utilizing this number.</p>
+<div id="cell-10" class="cell" data-execution_count="387">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_2D(X,color_vector):</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Utility plotting function taken from lab 4.2"""</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    ax.scatter(X[:,<span class="dv">0</span>], X[:,<span class="dv">1</span>],c<span class="op">=</span>color_vector, alpha<span class="op">=</span><span class="fl">0.5</span>) <span class="co">#, c=y</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    ax.<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">'PC-1 '</span>, ylabel<span class="op">=</span><span class="st">'PC-2'</span>,</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">'Principal Component Analysis results'</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    ax.grid()</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    plt.show()</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>pca <span class="op">=</span> PCA(n_components<span class="op">=</span><span class="dv">6</span>) <span class="co"># initiating a pca </span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>yelp_pca <span class="op">=</span> pca.fit_transform(yelp_scaled) <span class="co"># reducing dimensionality</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>cuisine_colors <span class="op">=</span> yelp_zip[<span class="st">'cuisine_cat'</span>].astype(<span class="st">'category'</span>).cat.codes <span class="co"># converting cuisine to categorical codes</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>income_colors <span class="op">=</span> yelp_zip[<span class="st">'Median_Income'</span>].astype(<span class="st">'category'</span>).cat.codes</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>rating_colors <span class="op">=</span> yelp_zip[<span class="st">'rating'</span>].astype(<span class="st">'category'</span>).cat.codes</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>review_colors <span class="op">=</span> yelp_zip[<span class="st">'review_count'</span>].astype(<span class="st">'category'</span>).cat.codes</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>zip_colors <span class="op">=</span> yelp_zip[<span class="st">'zip_code'</span>].astype(<span class="st">'category'</span>).cat.codes</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>price_colors <span class="op">=</span> yelp_zip[<span class="st">'price_range'</span>].astype(<span class="st">'category'</span>).cat.codes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="cell-11" class="cell" data-execution_count="388">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plotting the PCA color coded by the Income values</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>plot_2D(yelp_pca, income_colors)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="main_files/figure-html/cell-6-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>In the above plot, we are showing the PCA results with color-coding of the median income levels. We see that there are potential clusters like the light green at the bottom of the plot and the large cluster at (0,1). However, there is a large amount of overlap in the clusters and no clear distribution of the points, indicating that is likely that the influence of cuisine types on the PCA captured patterns is not meaningul. There seems to be no clear strong correlation between the features of the restaurant (median income of area, zipcode, price range, yelp rating, review count, latitude, and longitude) and the income of the surronding area.</p>
+<div id="cell-13" class="cell" data-execution_count="389">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plotting the PCA color coded by the Yelp ratings</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>plot_2D(yelp_pca, rating_colors)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="main_files/figure-html/cell-7-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>We then tried to visualize the same PCA with the yelp ratings as the color-coding. Again, we see there is a large amount of overlap in the clusters and almost no clear clusters that are separate from the other clusters. This indicating that it is likely that the influence on the PCA captured patterns is not meaningul for yelp ratings. Again, there is no clear correlation between the features of the restaurant and the yelp rating that the restaurant receives.</p>
+<div id="cell-15" class="cell" data-execution_count="390">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plotting the PCA color coded by the number of reviews</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>plot_2D(yelp_pca, review_colors)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="main_files/figure-html/cell-8-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Next, we again with visualizing the PCA with the number of reviews as the color-coding. We see that there is somewhat of a striping pattern here where the colors seem to aggregate in a vertical fashion. However, these clusters appear at each of the x-coordinates of the plot, making the pattern less clear. There is still a decent amount of overlap, thus we cannot fully conclude either way if there is a correlation between the features of the restaurant and the number of reviews that the restaurant receives.</p>
+<div id="cell-17" class="cell" data-execution_count="391">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plotting the PCA color coded by the cusine categories</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>plot_2D(yelp_pca, cuisine_colors)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="main_files/figure-html/cell-9-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Finally, we color-code the PCA results with the cuisine categories. We see that there is almost complete overlap between clusters and no clear distribution of the points, indicating that is likely that the influence of cuisine types on the PCA captured patterns is not meaningul. We can conclude from the plot that there is no strong correlation between the features of the restaurant and the type of cuisine the restaurant is.</p>
+</section>
+<section id="t-sne" class="level3">
+<h3 class="anchored" data-anchor-id="t-sne">t-SNE</h3>
+<div id="cell-20" class="cell" data-execution_count="392">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># T-SNE </span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># with cuisine</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_2D(X,color_vector):</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Utility plotting function taken from lab 4.2, reusing for t-SNE"""</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    ax.scatter(X[:,<span class="dv">0</span>], X[:,<span class="dv">1</span>],c<span class="op">=</span>color_vector, alpha<span class="op">=</span><span class="fl">0.5</span>) <span class="co">#, c=y</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    ax.<span class="bu">set</span>(xlabel<span class="op">=</span><span class="st">'t-SNE Dimension 1'</span>, ylabel<span class="op">=</span><span class="st">'t-SNE Dimension 2'</span>,</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">'t-SNE Analysis results'</span>)</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    ax.grid()</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>    plt.show()</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>tsne <span class="op">=</span> TSNE(n_components<span class="op">=</span><span class="dv">2</span>) <span class="co"># initiating tsne</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>yelp_tsne <span class="op">=</span> tsne.fit_transform(yelp_scaled)</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>plot_2D(yelp_tsne, cuisine_colors)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="main_files/figure-html/cell-10-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The above plot is the results of the t-SNE process, which as was said in the introduction, attempts to visualize high-dimensional data in a low-dimensional space. The plot shows that t-SNE produced no distinct clusters. Here the colors are coded by the cuisine types and we see that the points are clearly dispersed throughout the plot in no clear patterns. There is a lot of overlap between points, which indicates that the cuisine types are not clearly distinct from each other in terms of the restaurant features that make up the types.</p>
+<div id="cell-22" class="cell" data-execution_count="393">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>numeric_yelp <span class="op">=</span> yelp_zip.drop(columns<span class="op">=</span>[<span class="st">'name'</span>, <span class="st">'cuisine'</span>, <span class="st">'cuisine_cat'</span>, <span class="st">'rating'</span>]) <span class="co"># keeping only numeric variables</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>scaler <span class="op">=</span> StandardScaler() <span class="co"># initializing a scaler</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>yelp_scaled <span class="op">=</span> scaler.fit_transform(numeric_yelp) <span class="co"># standardizing the variables</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>tsne <span class="op">=</span> TSNE(n_components<span class="op">=</span><span class="dv">2</span>) <span class="co"># initiating tsne</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>yelp_tsne <span class="op">=</span> tsne.fit_transform(yelp_scaled)</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>plot_2D(yelp_tsne, rating_colors)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="main_files/figure-html/cell-11-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>This t-SNE plot is utilizing the Yelp ratings for color coding. The points are distributed throughout the plot in no clear patterns. Again, there is a large amount of overlap between points, which indicates that the Yelp ratings are distributed across the restaurant features pretty randomly.</p>
+<div id="cell-24" class="cell" data-execution_count="394">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>numeric_yelp <span class="op">=</span> yelp_zip.drop(columns<span class="op">=</span>[<span class="st">'name'</span>, <span class="st">'cuisine'</span>, <span class="st">'cuisine_cat'</span>, <span class="st">'review_count'</span>]) <span class="co"># keeping only numeric variables</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>scaler <span class="op">=</span> StandardScaler() <span class="co"># initializing a scaler</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>yelp_scaled <span class="op">=</span> scaler.fit_transform(numeric_yelp) <span class="co"># standardizing the variables</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>tsne <span class="op">=</span> TSNE(n_components<span class="op">=</span><span class="dv">2</span>) <span class="co"># initiating tsne</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>yelp_tsne <span class="op">=</span> tsne.fit_transform(yelp_scaled)</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>plot_2D(yelp_tsne, review_colors)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="main_files/figure-html/cell-12-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>We attempted another t-SNE plot is with the review counts for color coding. Again, we see no clear clustering patterns amoung the points and there is a lot of overlap between the coloring. We are seeing that the review count is also not strongly related to the features of the restaurant.</p>
+<div id="cell-26" class="cell" data-execution_count="395">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>numeric_yelp <span class="op">=</span> yelp_zip.drop(columns<span class="op">=</span>[<span class="st">'name'</span>, <span class="st">'cuisine'</span>, <span class="st">'cuisine_cat'</span>, <span class="st">'price_range'</span>, <span class="st">'price'</span>]) <span class="co"># keeping only numeric variables</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>scaler <span class="op">=</span> StandardScaler() <span class="co"># initializing a scaler</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>yelp_scaled <span class="op">=</span> scaler.fit_transform(numeric_yelp) <span class="co"># standardizing the variables</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>tsne <span class="op">=</span> TSNE(n_components<span class="op">=</span><span class="dv">2</span>) <span class="co"># initiating tsne</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>yelp_tsne <span class="op">=</span> tsne.fit_transform(yelp_scaled)</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>plot_2D(yelp_tsne, price_colors)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="main_files/figure-html/cell-13-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Next, we attempted again the t-SNE plot, but with the price ranges for color coding. Again, we see no clear clustering patterns amoung the points and there is a lot of overlap between the coloring. We are seeing that the price range of a restaurant is also not strongly related to the features.</p>
+<div id="cell-28" class="cell" data-execution_count="396">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>numeric_yelp <span class="op">=</span> yelp_zip.drop(columns<span class="op">=</span>[<span class="st">'name'</span>, <span class="st">'cuisine'</span>, <span class="st">'cuisine_cat'</span>, <span class="st">'Median_Income'</span>]) <span class="co"># keeping only numeric variables</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>scaler <span class="op">=</span> StandardScaler() <span class="co"># initializing a scaler</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>yelp_scaled <span class="op">=</span> scaler.fit_transform(numeric_yelp) <span class="co"># standardizing the variables</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>tsne <span class="op">=</span> TSNE(n_components<span class="op">=</span><span class="dv">2</span>) <span class="co"># initiating tsne</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>yelp_tsne <span class="op">=</span> tsne.fit_transform(yelp_scaled)</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>plot_2D(yelp_tsne, income_colors)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="main_files/figure-html/cell-14-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>In our last t-SNE attempt, we plotted the t-SNE results with the Median Income values of the zipcode where the restaurnt is located as the colors. This lead to somewhat more interesting results as there is less overlap and some potential loose clustering occurring. We can see that there is a teal clutser around (-10, 20) that may be a distinct cluster, however, there are some outliers for this grouping. There is also a light green cluster situated to the right of this cluster, again that has a pattern, but with outliers. The rest of the clusters are mostly overlapping and dispersed throughout the plot. This leads us to believe that there may be some relation between the median income and the features of the restaurant, however, in specific cases and not across the board for all restaurants and income brackets.</p>
+<p>We now played around with the perplexity values for the t-SNE results, utilizing perplexity of 5, 30, and 50. The perplexity is used to manage the balance of the global and local structures within the data. Lower values of perplexity will focus more on the local structure, while a higher perplexity will focus more on the global structure. These will be visualized with color codings for Yelp rating and Median Income. These two were choosen because Yelp rating is most aligned with our reserach questions of understanding what makes us a yelp rating and because median income showed the most preliminary clustering in the above plots.</p>
+<div id="cell-31" class="cell" data-execution_count="397">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># experimenting with different perplexity values</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co"># perplexity = 5</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>numeric_yelp <span class="op">=</span> yelp_zip.drop(columns<span class="op">=</span>[<span class="st">'name'</span>, <span class="st">'cuisine'</span>, <span class="st">'cuisine_cat'</span>, <span class="st">'Median_Income'</span>]) <span class="co"># keeping only numeric variables</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>scaler <span class="op">=</span> StandardScaler() <span class="co"># initializing a scaler</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>yelp_scaled <span class="op">=</span> scaler.fit_transform(numeric_yelp) <span class="co"># standardizing the variables</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>tsne_5 <span class="op">=</span> TSNE(n_components<span class="op">=</span><span class="dv">2</span>, perplexity<span class="op">=</span><span class="dv">5</span>)</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>yelp_tsne5 <span class="op">=</span> tsne_5.fit_transform(yelp_scaled)</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>plot_2D(yelp_tsne5, income_colors)</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>numeric_yelp <span class="op">=</span> yelp_zip.drop(columns<span class="op">=</span>[<span class="st">'name'</span>, <span class="st">'cuisine'</span>, <span class="st">'cuisine_cat'</span>, <span class="st">'rating'</span>]) <span class="co"># keeping only numeric variables</span></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>scaler <span class="op">=</span> StandardScaler() <span class="co"># initializing a scaler</span></span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>yelp_scaled <span class="op">=</span> scaler.fit_transform(numeric_yelp) <span class="co"># standardizing the variables</span></span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>tsne_5 <span class="op">=</span> TSNE(n_components<span class="op">=</span><span class="dv">2</span>, perplexity<span class="op">=</span><span class="dv">5</span>)</span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>yelp_tsne5 <span class="op">=</span> tsne_5.fit_transform(yelp_scaled)</span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>plot_2D(yelp_tsne5, rating_colors)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="main_files/figure-html/cell-15-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="main_files/figure-html/cell-15-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>In the two plots above, we have plotted the t-SNE results utilizing a perplexity value of 5 (as opposed to the default value of 30). In the first plot, we color code with the median income values and the second plot is color coded with the yelp ratings. In both of the plots, we see that the points are distributed across the plots in no clear pattern. There is a large amount of overlap and no emerging clusters, thus we can say that there is no relation between the features of the restaurant and the median income and yelp rating when looking at the local structure of the dataset.</p>
+<div id="cell-33" class="cell" data-execution_count="398">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># perplexity = 35</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>numeric_yelp <span class="op">=</span> yelp_zip.drop(columns<span class="op">=</span>[<span class="st">'name'</span>, <span class="st">'cuisine'</span>, <span class="st">'cuisine_cat'</span>, <span class="st">'Median_Income'</span>]) <span class="co"># keeping only numeric variables</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>scaler <span class="op">=</span> StandardScaler() <span class="co"># initializing a scaler</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>yelp_scaled <span class="op">=</span> scaler.fit_transform(numeric_yelp) <span class="co"># standardizing the variables</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>tsne_35 <span class="op">=</span> TSNE(n_components<span class="op">=</span><span class="dv">2</span>, perplexity<span class="op">=</span><span class="dv">35</span>)</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>yelp_tsne35 <span class="op">=</span> tsne_35.fit_transform(yelp_scaled)</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>plot_2D(yelp_tsne35, income_colors)</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>numeric_yelp <span class="op">=</span> yelp_zip.drop(columns<span class="op">=</span>[<span class="st">'name'</span>, <span class="st">'cuisine'</span>, <span class="st">'cuisine_cat'</span>, <span class="st">'rating'</span>]) <span class="co"># keeping only numeric variables</span></span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>scaler <span class="op">=</span> StandardScaler() <span class="co"># initializing a scaler</span></span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>yelp_scaled <span class="op">=</span> scaler.fit_transform(numeric_yelp) <span class="co"># standardizing the variables</span></span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>tsne_35 <span class="op">=</span> TSNE(n_components<span class="op">=</span><span class="dv">2</span>, perplexity<span class="op">=</span><span class="dv">35</span>)</span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>yelp_tsne35 <span class="op">=</span> tsne_35.fit_transform(yelp_scaled)</span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>plot_2D(yelp_tsne35, rating_colors)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="main_files/figure-html/cell-16-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="main_files/figure-html/cell-16-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>We then plotted the t-SNE results utilizing a perplexity value of 35 (which is still relatively close to the default value of 30). Again, the plots are color coded by median income values and yelp ratings, respectively. In the second plot, we again see that the points are distributed across the plots in no clear pattern and there are no emerging clusters, thus we can say that there is no relation between the features of the restaurant and yelp rating when looking more at the global structure of the data. However, looking at teh median income plot, we see the light green and teal clusters near (-10, 15), indicating there may be some emerging relation between the features of the restaurant and the income of the neighborhood.</p>
+<div id="cell-35" class="cell" data-execution_count="399">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># experimenting with different perplexity values</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co"># perplexity = 50</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>numeric_yelp <span class="op">=</span> yelp_zip.drop(columns<span class="op">=</span>[<span class="st">'name'</span>, <span class="st">'cuisine'</span>, <span class="st">'cuisine_cat'</span>, <span class="st">'Median_Income'</span>]) <span class="co"># keeping only numeric variables</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>scaler <span class="op">=</span> StandardScaler() <span class="co"># initializing a scaler</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>yelp_scaled <span class="op">=</span> scaler.fit_transform(numeric_yelp) <span class="co"># standardizing the variables</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>tsne_50 <span class="op">=</span> TSNE(n_components<span class="op">=</span><span class="dv">2</span>, perplexity<span class="op">=</span><span class="dv">50</span>)</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>yelp_tsne50 <span class="op">=</span> tsne_50.fit_transform(yelp_scaled)</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>plot_2D(yelp_tsne50, income_colors)</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>numeric_yelp <span class="op">=</span> yelp_zip.drop(columns<span class="op">=</span>[<span class="st">'name'</span>, <span class="st">'cuisine'</span>, <span class="st">'cuisine_cat'</span>, <span class="st">'rating'</span>]) <span class="co"># keeping only numeric variables</span></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>scaler <span class="op">=</span> StandardScaler() <span class="co"># initializing a scaler</span></span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>yelp_scaled <span class="op">=</span> scaler.fit_transform(numeric_yelp) <span class="co"># standardizing the variables</span></span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>tsne_50 <span class="op">=</span> TSNE(n_components<span class="op">=</span><span class="dv">2</span>, perplexity<span class="op">=</span><span class="dv">50</span>)</span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>yelp_tsne50 <span class="op">=</span> tsne_50.fit_transform(yelp_scaled)</span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>plot_2D(yelp_tsne50, rating_colors)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="main_files/figure-html/cell-17-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="main_files/figure-html/cell-17-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>We finally plot the t-SNE results utilizing a perplexity value of 50 (which is more than the 30 and 35 and will look at the global structure of the data). Again, the plots are color coded by median income values and yelp ratings, respectively. In the second plot, we again see that the points are distributed across the plots in no clear pattern and there are no emerging clusters, thus we can say that there is no relation between the features of the restaurant and yelp rating when looking more at the global structure of the data. However, looking at the median income plot, we see the light green and teal clusters near (-10, 15) and are also seeing an emerging loose cluster of green near (0,10). This could again indicate there may be some emerging relation between the features of the restaurant and the income of the neighborhood, especially when we account for the global structure of the data and look at more broad relationships between points.</p>
+</section>
+<section id="comparison" class="level3">
+<h3 class="anchored" data-anchor-id="comparison">Comparison</h3>
+<p>When we performed the principal component analysis and t-SNE, we overwhelming, found little to no significant results. The PCA yielded that there was no correlation between the features of the restaurant and the median income level, the yelp rating, the number of yelp reviews, and the cuisine type. The t-SNE results backed up this finding by making clear that there was no relationship between the restaurant features and the cuisine type, the yelp rating, the number of reviews, and the price range. T-SNE did, however, begin to show a slight clustering in the relationship between the features of the restaurant and the median income level of the surronding area. This clustering was extremely slight and there was still alot of overlapping and outliers. This clustering began to appear more as the perplexity value increased, however, this pattern may be explained by the relationship between median income and zip code and was too slight to make a true conclusion about the relationship. The small difference in the result is potentially due to the bias from the zip code or from the difference in the technique of PCA and t-SNE. T-SNE is a non-linear method, so it may have been able to find the small relationship in the between income and the features because it was more apparent in the global structure, which was seen as the perplexity value increased. Overall, we come to no true conclusions about the relationship between the features of the restaurant.</p>
+</section>
+</section>
+<section id="clustering-methods" class="level2">
+<h2 class="anchored" data-anchor-id="clustering-methods">Clustering Methods</h2>
+<div id="cell-39" class="cell" data-execution_count="400">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># pre-processing steps</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co"># scaling the numeric features</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>scaler <span class="op">=</span> StandardScaler() <span class="co"># initializing a scaler</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>scaled_nums <span class="op">=</span> scaler.fit_transform(yelp_zip[[<span class="st">'Median_Income'</span>, <span class="st">'zip_code'</span>, <span class="st">'price_range'</span>, <span class="st">'rating'</span>, <span class="st">'review_count'</span>, <span class="st">'latitude'</span>, <span class="st">'longitude'</span>, <span class="st">'price'</span>]])</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>yelp_zip[[<span class="st">'Median_Income'</span>, <span class="st">'zip_code'</span>, <span class="st">'price_range'</span>, <span class="st">'rating'</span>, <span class="st">'review_count'</span>, <span class="st">'latitude'</span>, <span class="st">'longitude'</span>, <span class="st">'price'</span>]] <span class="op">=</span> scaled_nums</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(yelp_zip.head(<span class="dv">5</span>))</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>yelp_zip <span class="op">=</span> yelp_zip.drop(columns <span class="op">=</span> [<span class="st">'name'</span>, <span class="st">'cuisine'</span>, <span class="st">'cuisine_cat'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Median_Income  zip_code                        name       cuisine  \
+0       0.488229 -0.731905              Compass Coffee  Coffee &amp; Tea   
+1       0.488229 -0.731905  Sankofa Video Books &amp; Cafe    Bookstores   
+2       0.488229 -0.731905           La Colombe Coffee  Coffee &amp; Tea   
+3       0.488229 -0.731905        Sylvan Cafe &amp; Bakery      Bakeries   
+4       0.488229 -0.731905                 Urban Roast  Coffee &amp; Tea   
+
+   price_range    rating  review_count  latitude  longitude     price  \
+0    -0.120364  0.023268     -0.653447  0.673732   0.156349 -0.208398   
+1    -2.054779  1.125458     -0.530862  1.299282   0.137330 -1.642612   
+2    -0.120364 -0.252279     -0.308575 -0.348487   0.291018 -0.208398   
+3    -2.054779 -0.252279     -0.584799  0.615718   0.669956 -1.642612   
+4    -0.120364 -1.905564      0.701521 -0.553228   0.048241 -0.208398   
+
+  cuisine_cat  
+0       cafes  
+1       cafes  
+2       cafes  
+3       cafes  
+4       cafes  </code></pre>
+</div>
+</div>
+<div id="cell-40" class="cell" data-execution_count="401">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># checking for highly correlated features</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>sns.pairplot(yelp_zip)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="main_files/figure-html/cell-19-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>There are no clear correlated features that need to be removed for the further analysis.</p>
+<div id="cell-42" class="cell" data-execution_count="402">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># checking the values are standardized</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(yelp_zip.head(<span class="dv">10</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Median_Income  zip_code  price_range    rating  review_count  latitude  \
+0       0.488229 -0.731905    -0.120364  0.023268     -0.653447  0.673732   
+1       0.488229 -0.731905    -2.054779  1.125458     -0.530862  1.299282   
+2       0.488229 -0.731905    -0.120364 -0.252279     -0.308575 -0.348487   
+3       0.488229 -0.731905    -2.054779 -0.252279     -0.584799  0.615718   
+4       0.488229 -0.731905    -0.120364 -1.905564      0.701521 -0.553228   
+5       0.488229 -0.731905    -0.120364 -2.181111      0.415491  0.433059   
+6       0.488229 -0.731905    -0.120364  0.574363      0.101674  0.015760   
+7       0.488229 -0.731905    -0.120364  0.849911      3.354251 -0.253399   
+8       0.488229 -0.731905    -0.120364  0.298816     -0.256273 -0.375423   
+9       0.488229 -0.731905    -0.120364  0.298816     -0.674695  0.283428   
+
+   longitude     price  
+0   0.156349 -0.208398  
+1   0.137330 -1.642612  
+2   0.291018 -0.208398  
+3   0.669956 -1.642612  
+4   0.048241 -0.208398  
+5   0.687199 -0.208398  
+6   0.047625 -0.208398  
+7   0.433704 -0.208398  
+8  -0.043970 -0.208398  
+9  -0.043504 -0.208398  </code></pre>
+</div>
+</div>
+<section id="k-means" class="level3">
+<h3 class="anchored" data-anchor-id="k-means">K-Means</h3>
+<div id="cell-44" class="cell" data-execution_count="403">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># K-Means</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> kmean_fit(k): <span class="co"># kmean function </span></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""KMean funciton taken from lab 4.1"""</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">global</span> yelp_zip, model</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>    model<span class="op">=</span>KMeans(n_clusters<span class="op">=</span>k,max_iter<span class="op">=</span><span class="dv">5000</span>,tol<span class="op">=</span><span class="fl">1e-6</span>)</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>    model.fit(yelp_zip)</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> model.inertia_</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>ks<span class="op">=</span>[]</span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>inertias<span class="op">=</span>[]</span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">20</span>):</span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>    inertia<span class="op">=</span>kmean_fit(k)</span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>    ks.append(k)</span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>    inertias.append(inertia)</span>
+<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a>plt1 <span class="op">=</span> plt.plot(ks,inertias,<span class="st">"-o"</span>)</span>
+<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Intertia versus number of clusters (elbow method)'</span>)</span>
+<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'k'</span>)</span>
+<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'inertia'</span>)</span>
+<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a>plt.show(plt1)</span>
+<span id="cb24-22"><a href="#cb24-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-23"><a href="#cb24-23" aria-hidden="true" tabindex="-1"></a><span class="co">### Silhouette Score</span></span>
+<span id="cb24-24"><a href="#cb24-24" aria-hidden="true" tabindex="-1"></a>range_n_clusters <span class="op">=</span> [<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>,<span class="dv">10</span>,<span class="dv">11</span>,<span class="dv">12</span>,<span class="dv">13</span>,<span class="dv">14</span>,<span class="dv">15</span>,<span class="dv">16</span>,<span class="dv">17</span>,<span class="dv">18</span>,<span class="dv">19</span>,<span class="dv">20</span>] <span class="co"># different possible number of clusters</span></span>
+<span id="cb24-25"><a href="#cb24-25" aria-hidden="true" tabindex="-1"></a>sil_scores <span class="op">=</span> [] <span class="co"># initalizing empty list for silhouette scores</span></span>
+<span id="cb24-26"><a href="#cb24-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-27"><a href="#cb24-27" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> n_clusters <span class="kw">in</span> range_n_clusters: <span class="co"># looping through the number of clusters</span></span>
+<span id="cb24-28"><a href="#cb24-28" aria-hidden="true" tabindex="-1"></a>    clusterer <span class="op">=</span> KMeans(n_clusters<span class="op">=</span>n_clusters, random_state<span class="op">=</span><span class="dv">10</span>) <span class="co"># using Kmeans with each cluster value</span></span>
+<span id="cb24-29"><a href="#cb24-29" aria-hidden="true" tabindex="-1"></a>    cluster_labels <span class="op">=</span> clusterer.fit_predict(yelp_zip)  <span class="co"># getting the labels</span></span>
+<span id="cb24-30"><a href="#cb24-30" aria-hidden="true" tabindex="-1"></a>    silhouette_avg <span class="op">=</span> silhouette_score(yelp_zip, cluster_labels) <span class="co"># getting the silhoeutte score</span></span>
+<span id="cb24-31"><a href="#cb24-31" aria-hidden="true" tabindex="-1"></a>    sil_scores.append(silhouette_avg)</span>
+<span id="cb24-32"><a href="#cb24-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-33"><a href="#cb24-33" aria-hidden="true" tabindex="-1"></a>plt2 <span class="op">=</span> plt.plot(range_n_clusters, sil_scores, <span class="st">"-o"</span>, color<span class="op">=</span><span class="st">'orange'</span>) <span class="co"># plotting number of clusters and silhouette score</span></span>
+<span id="cb24-34"><a href="#cb24-34" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Silhouette Scores versus number of clusters'</span>)</span>
+<span id="cb24-35"><a href="#cb24-35" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'k'</span>)</span>
+<span id="cb24-36"><a href="#cb24-36" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'silhouette score'</span>)</span>
+<span id="cb24-37"><a href="#cb24-37" aria-hidden="true" tabindex="-1"></a>plt.show(plt2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="main_files/figure-html/cell-21-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="main_files/figure-html/cell-21-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Above we have plotted the inertia versus the number of clusters and the silhouette score versus the number of clusters. These plots together are meant to help choose the number of clusters to utilize in intializing k-Means. Generally, we look for an “elbow point” in the first plot, where the inertia begins to taper off, however, the plot lacks a true elbow point, thus, we will look mostly at the silhoeutte score for the decision. Based on the first plot, we are looking somewhere in the 5-12 cluster range. We are going to decide to choose 7 clusters to obtain a relatively high silhouette score.</p>
+<div id="cell-46" class="cell" data-execution_count="404">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Initializing K Means with optimal k value</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> <span class="dv">7</span> <span class="co"># based on the silhouette scores</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> KMeans(n_clusters<span class="op">=</span>k, max_iter<span class="op">=</span><span class="dv">5000</span>, tol<span class="op">=</span><span class="fl">1e-6</span>)</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>model.fit(yelp_zip)</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>labels <span class="op">=</span> model.predict(yelp_zip)</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Scatter plot of the clusters using ratings and median income</span></span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>plt.scatter(yelp_zip[<span class="st">'rating'</span>], yelp_zip[<span class="st">'Median_Income'</span>], c<span class="op">=</span>labels, cmap<span class="op">=</span><span class="st">'viridis'</span>)</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'KMeans Clustering'</span>)</span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Yelp Rating'</span>)</span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Median Income'</span>)</span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="main_files/figure-html/cell-22-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>In the above plot we see the yelp ratings plotted against the median income with K-Means clustering. The plot shows no clear clusters, lots of overlap, and points that are dispersed across both axes. This indicates that there is no strong correlation between the yelp rating and the median income of the area.</p>
+<div id="cell-48" class="cell" data-execution_count="405">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Scatter plot of the clusters using ratings and price range</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>plt.scatter(yelp_zip[<span class="st">'rating'</span>], yelp_zip[<span class="st">'price_range'</span>], c<span class="op">=</span>labels, cmap<span class="op">=</span><span class="st">'viridis'</span>)</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'KMeans Clustering'</span>)</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Yelp Rating'</span>)</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Price Range'</span>)</span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="main_files/figure-html/cell-23-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>In the above plot we see the yelp ratings plotted against the price ranges with K-Means clustering. The plot shows no clear clusters, lots of overlap, and points that are dispersed across both axes. This indicates that there is no strong correlation between the yelp rating and the price range of the restaurant.</p>
+<div id="cell-50" class="cell" data-execution_count="406">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Scatter plot of the clusters using ratings and review count</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>plt.scatter(yelp_zip[<span class="st">'rating'</span>], yelp_zip[<span class="st">'review_count'</span>], c<span class="op">=</span>labels, cmap<span class="op">=</span><span class="st">'viridis'</span>)</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'KMeans Clustering'</span>)</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Yelp Rating'</span>)</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Number of Reviews'</span>)</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="main_files/figure-html/cell-24-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>In the above plot we see the yelp rating plotted against the number of reviews with K-Means clustering. The plot shows only one potential cluster, which is the green color towards the top of the graph. This would point to more reviews having highing rating, but it is not a strong cluster. Other than that there are no clear clusters and the points that are dispersed across both axes. This indicates that there is small potential for some correlation between the yelp rating and the number of reviews, but in a small subset and not across the board.</p>
+<div id="cell-52" class="cell" data-execution_count="407">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Scatter plot of the clusters using review count and price range</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>plt.scatter(yelp_zip[<span class="st">'review_count'</span>], yelp_zip[<span class="st">'price_range'</span>], c<span class="op">=</span>labels, cmap<span class="op">=</span><span class="st">'viridis'</span>)</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'KMeans Clustering'</span>)</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Number of Yelp Reviews'</span>)</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Price Range'</span>)</span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="main_files/figure-html/cell-25-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>In the above plot we see the price range plotted against the number of Yelp reviews with K-Means clustering. The plot shows no clear clusters and the points are very dispersed across both axes. This indicates that there is no strong correlation between the price range of the restaurant and the number of yelp reviews.</p>
+<div id="cell-54" class="cell" data-execution_count="408">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Scatter plot of the clusters using price range and median income</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>plt.scatter(yelp_zip[<span class="st">'price_range'</span>], yelp_zip[<span class="st">'Median_Income'</span>], c<span class="op">=</span>labels, cmap<span class="op">=</span><span class="st">'viridis'</span>)</span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'KMeans Clustering'</span>)</span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Price Range'</span>)</span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Median Income'</span>)</span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="main_files/figure-html/cell-26-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Finally, we plotted the median income against the price range utilizing K-Means clustering. The plot again shows no clear clusters and the points are very dispersed across both axes. This indicates that there is no strong correlation between the price range of the restaurant and the median income.</p>
+<div id="cell-56" class="cell" data-execution_count="409">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># used CHATGPT for help with 3D plot</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>yelp_clustered <span class="op">=</span> pd.DataFrame(yelp_zip, columns<span class="op">=</span>[<span class="st">'rating'</span>, <span class="st">'price_range'</span>, <span class="st">'review_count'</span>])</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>yelp_clustered[<span class="st">'cluster'</span>] <span class="op">=</span> labels</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.scatter_3d(</span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>    yelp_clustered,</span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span><span class="st">'rating'</span>,                <span class="co"># X-axis</span></span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span><span class="st">'price_range'</span>,           <span class="co"># Y-axis</span></span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a>    z<span class="op">=</span><span class="st">'review_count'</span>,          <span class="co"># Z-axis</span></span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>    color<span class="op">=</span><span class="st">'cluster'</span>,           <span class="co"># Color points by cluster</span></span>
+<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>    symbol<span class="op">=</span><span class="st">'cluster'</span>,          <span class="co"># Optional: Different symbols for each cluster</span></span>
+<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a>    hover_data<span class="op">=</span>[<span class="st">'rating'</span>, <span class="st">'price_range'</span>, <span class="st">'review_count'</span>],  <span class="co"># Show details on hover</span></span>
+<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">'Interactive 3D Clustering of Yelp Data'</span></span>
+<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a>fig.update_traces(marker<span class="op">=</span><span class="bu">dict</span>(size<span class="op">=</span><span class="dv">5</span>))  <span class="co"># Adjust marker size</span></span>
+<span id="cb30-17"><a href="#cb30-17" aria-hidden="true" tabindex="-1"></a>fig.update_layout(scene<span class="op">=</span><span class="bu">dict</span>(</span>
+<span id="cb30-18"><a href="#cb30-18" aria-hidden="true" tabindex="-1"></a>    xaxis_title<span class="op">=</span><span class="st">'Rating'</span>,</span>
+<span id="cb30-19"><a href="#cb30-19" aria-hidden="true" tabindex="-1"></a>    yaxis_title<span class="op">=</span><span class="st">'Price Range'</span>,</span>
+<span id="cb30-20"><a href="#cb30-20" aria-hidden="true" tabindex="-1"></a>    zaxis_title<span class="op">=</span><span class="st">'Review Count'</span></span>
+<span id="cb30-21"><a href="#cb30-21" aria-hidden="true" tabindex="-1"></a>))</span>
+<span id="cb30-22"><a href="#cb30-22" aria-hidden="true" tabindex="-1"></a>fig.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>Unable to display output for mime type(s): application/vnd.plotly.v1+json</code></pre>
+</div>
+</div>
+<p>In the above plot we try to utilize a 3D plot to visualize the review count, price range and the rating see the price range with K-Means clustering. The plots shows a potential cluster of the purple x’s which appear towards the top of the plot. This again, points to a potential relationship between the number of reviews and the yelp rating of the restaurant for the two middle price ranges. Again, this lends to a loose conclusion about having more reviews having a slight positive effect on the yelp rating. the other clusters are relatively less strong and are more overlapping.</p>
+</section>
+<section id="dbscan" class="level3">
+<h3 class="anchored" data-anchor-id="dbscan">DBSCAN</h3>
+<div id="cell-59" class="cell" data-execution_count="410">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># DBSCAN</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="co"># modified from lab 4.1</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>range_eps<span class="op">=</span> [<span class="fl">0.1</span>, <span class="fl">0.2</span>, <span class="fl">0.3</span>, <span class="fl">0.4</span>, <span class="fl">0.5</span>, <span class="fl">0.6</span>, <span class="fl">0.7</span>, <span class="fl">0.8</span>, <span class="fl">0.9</span>, <span class="fl">1.0</span>] <span class="co"># possible values of epsilon (hyperparameter)</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>range_samples <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>] <span class="co"># possible number of samples (hyperparameter)</span></span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>sil_scores <span class="op">=</span> [] <span class="co"># silhouette scores</span></span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="bu">max</span> <span class="op">=</span> <span class="op">-</span><span class="dv">1</span> <span class="co"># initiailizing a max value</span></span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>eps_and_sample <span class="op">=</span> []</span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> epsilon <span class="kw">in</span> range_eps: <span class="co"># iterating through both of the hyperparamters</span></span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> sample <span class="kw">in</span> range_samples:</span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>        clustering <span class="op">=</span> DBSCAN(eps<span class="op">=</span>epsilon, min_samples<span class="op">=</span>sample).fit(yelp_zip) <span class="co"># using DBSCAN</span></span>
+<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a>        cluster_labels <span class="op">=</span> clustering.labels_  <span class="co"># getting the cluster values</span></span>
+<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="bu">len</span>(<span class="bu">set</span>(cluster_labels)) <span class="op">&gt;</span> <span class="dv">1</span> <span class="kw">and</span> <span class="op">-</span><span class="dv">1</span> <span class="kw">in</span> cluster_labels:  <span class="co"># ignoring the noise</span></span>
+<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a>            silhouette_avg <span class="op">=</span> silhouette_score(yelp_zip, cluster_labels) <span class="co"># getting the silhouette scores</span></span>
+<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a>            sil_scores.append(silhouette_avg)</span>
+<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> silhouette_avg <span class="op">&gt;</span> <span class="bu">max</span>: <span class="co"># if the silhouette score is greater than the current max value</span></span>
+<span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a>                <span class="bu">max</span> <span class="op">=</span> silhouette_avg <span class="co"># make this the new max</span></span>
+<span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a>                eps_and_sample.append((epsilon, sample)) <span class="co"># save the hyperparamter values</span></span>
+<span id="cb32-20"><a href="#cb32-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">max</span>)</span>
+<span id="cb32-21"><a href="#cb32-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(eps_and_sample[<span class="op">-</span><span class="dv">1</span>]) <span class="co"># get only the hyperparamters for the max value</span></span>
+<span id="cb32-22"><a href="#cb32-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-23"><a href="#cb32-23" aria-hidden="true" tabindex="-1"></a>eps <span class="op">=</span> <span class="fl">0.9</span> <span class="co"># from the results above</span></span>
+<span id="cb32-24"><a href="#cb32-24" aria-hidden="true" tabindex="-1"></a>min_samples <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb32-25"><a href="#cb32-25" aria-hidden="true" tabindex="-1"></a>clustering <span class="op">=</span> DBSCAN(eps<span class="op">=</span>eps, min_samples<span class="op">=</span>min_samples) <span class="co"># initialize DBSCAN with optimal hyperparameters</span></span>
+<span id="cb32-26"><a href="#cb32-26" aria-hidden="true" tabindex="-1"></a>cluster_labels <span class="op">=</span> clustering.fit_predict(yelp_zip) </span>
+<span id="cb32-27"><a href="#cb32-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-28"><a href="#cb32-28" aria-hidden="true" tabindex="-1"></a>plt.scatter(yelp_zip[<span class="st">'rating'</span>], yelp_zip[<span class="st">'review_count'</span>], c<span class="op">=</span>cluster_labels, cmap<span class="op">=</span><span class="st">'viridis'</span>)</span>
+<span id="cb32-29"><a href="#cb32-29" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'DBSCAN Clustering'</span>)</span>
+<span id="cb32-30"><a href="#cb32-30" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Yelp Rating'</span>)</span>
+<span id="cb32-31"><a href="#cb32-31" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Number of Reviews'</span>)</span>
+<span id="cb32-32"><a href="#cb32-32" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>0.20967415255007046
+(1.0, 2)</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="main_files/figure-html/cell-28-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>In the above, we visualized the number of reviews against the yelp ratings utilizing DBSCAN clustering. The plot shows no clear clusters as the points of each color are dispersed across the yelp axis and the points are mostly noise. This indicates that there is no strong correlation between the number of reviews and the yelp rating.</p>
+<div id="cell-61" class="cell" data-execution_count="411">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># DBSCAN rating and income</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>plt.scatter(yelp_zip[<span class="st">'rating'</span>], yelp_zip[<span class="st">'Median_Income'</span>], c<span class="op">=</span>cluster_labels, cmap<span class="op">=</span><span class="st">'viridis'</span>)</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'DBSCAN Clustering'</span>)</span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Yelp Rating'</span>)</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Median Income'</span>)</span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="main_files/figure-html/cell-29-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>We then used the same technique of DBSCAN to visualize the number of reviews against the median income. We find that the plot shows no clear clusters, dispersed points, and mostly points that would be classified as noise. This indicates that there is no strong correlation between the number of reviews and the surronding’s area median income.</p>
+<div id="cell-63" class="cell" data-execution_count="412">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># DBSCAN rating and price</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>plt.scatter(yelp_zip[<span class="st">'rating'</span>], yelp_zip[<span class="st">'price_range'</span>], c<span class="op">=</span>cluster_labels, cmap<span class="op">=</span><span class="st">'viridis'</span>)</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'DBSCAN Clustering'</span>)</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Yelp Rating'</span>)</span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Price Range'</span>)</span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="main_files/figure-html/cell-30-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Finally, we tried to visualize the Yelp rating and the price range of the restaurant. We find that the plot shows no clear clusters as the points of each color are dispersed across the yelp axis. This indicates that there is no strong correlation between the Yelp rating and the price range of the restaurant.</p>
+</section>
+<section id="hierarchical-clustering" class="level3">
+<h3 class="anchored" data-anchor-id="hierarchical-clustering">Hierarchical Clustering</h3>
+<div id="cell-66" class="cell" data-execution_count="413">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Hierarchical clustering</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>linkage_matrix <span class="op">=</span> linkage(yelp_zip, method<span class="op">=</span><span class="st">'ward'</span>) <span class="co"># creating linkage matrix</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="co"># plotting the hierarchical clustering (utilized CHATGPT for help here)</span></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>, <span class="dv">7</span>))</span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>dendrogram(linkage_matrix, labels<span class="op">=</span>yelp_zip.index, leaf_rotation<span class="op">=</span><span class="dv">90</span>, leaf_font_size<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Hierarchical Clustering Dendrogram'</span>)</span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Sample Index'</span>)</span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Distance'</span>)</span>
+<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-12"><a href="#cb36-12" aria-hidden="true" tabindex="-1"></a>num_clusters <span class="op">=</span> <span class="dv">4</span> <span class="co"># from dendogram inspection</span></span>
+<span id="cb36-13"><a href="#cb36-13" aria-hidden="true" tabindex="-1"></a>clusters <span class="op">=</span> fcluster(linkage_matrix, num_clusters, criterion<span class="op">=</span><span class="st">'maxclust'</span>)</span>
+<span id="cb36-14"><a href="#cb36-14" aria-hidden="true" tabindex="-1"></a>yelp_zip[<span class="st">'Cluster'</span>] <span class="op">=</span> clusters</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="main_files/figure-html/cell-31-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>In the above plot, we visualized a dendogram utilizing hierarchical clustering on the Yelp data. The dendogram splits the data into 3 color clusters. The red and green clusters are the most similar because they have the smallest height of their joining link, however, this link is still relatively high as it is about 28 in terms of distance, indicating low similarity. The similarity between orange and the mix of green and red is even higher at about 35 on the distance axis. This seems to indicate that there are not any truly similar clusters and likely no natural clusters within the dataset.</p>
+</section>
+</section>
+</section>
+<section id="summary-and-intepretation" class="level1">
+<h1>Summary and Intepretation</h1>
+<p>In this section we employed dimensionality reduction through principal component analysis (PCA), t-distributed stochastic neighbor embedding (t-SNE) as well as clustering through K-Means, DBSCAN, and hierarchical clustering. The objective was to explore the different methods, compare their effectiveness, and understand any consistent patterns within the Yelp dataset. By and large we found little significant results and patterns within the data.</p>
+<p>Beginning with the PCA we found no correlation between the different features of the restaurant and the median income level, the yelp rating, the number of yelp reviews, and the cuisine type of the restaurant. For t-SNE we found no relationship between the restaurant features and the cuisine type, the yelp rating, the number of reviews, and the price range. There was a small relationship between the features of the restaurant and the median income level, which appeared more clearly with higher perplexity values, however, it was too insignficant a cluster to make a true comment about the relationship between the number of reviews and the yelp rating. Overall, both of these dimensionality reduction techniques yielded little significant findings.</p>
+<p>We then moved to clustering methods, particularly K-Means. With this method, we found no strong correlation between yelp rating and income, yelp rating and price range, price range and number of reviews, price range and median income level. There was no clear clustering. There was some correlation present between the number of reviews and the yelp rating, which was more prevelant when utilizing the 3D model and become apparent for the mid-range pricing restaurants. When we utilized DBSCAN there was no correlation and clustering in every case; between number of reviews and yelp rating, betwween number of reviews and median income, and between yelp rating and price range. In addition, the hierarchical clustering showcased that there were no natural clusterings in the data.</p>
+<p>Overall, the results were too sparse and inconclusive for us to find any significant and reappearing patterns within the dataset. This may lead us to find that restaurants are quite unique entities and yelp ratings are hard to group and predict.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

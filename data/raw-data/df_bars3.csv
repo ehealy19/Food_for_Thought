@@ -1,0 +1,51 @@
+,name,cuisine,price_range,rating,review_count,neighborhoods,latitude,longitude,zip_code
+0,Spotted Zebra,Breakfast & Brunch,N/A,4.1,7,N/A,38.89950429670715,-77.0277270184019,20005
+1,The Dew Drop Inn,Dive Bars,$$,4.1,119,N/A,38.92598,-76.99471,20017
+2,Alice,Dance Clubs,N/A,4.3,83,N/A,38.91732,-77.03132,20009
+3,Brookland Pint,Bars,$$,3.4,358,N/A,38.9325075955497,-76.9951295317563,20017
+4,Upstairs at the Morrow,Bars,N/A,4.1,14,N/A,38.905904,-77.002674,20002
+5,The Haymaker Bar,New American,$$,4.3,86,N/A,38.89993,-76.99205,20002
+6,Atomic Billiards,Pool Halls,$,3.9,127,N/A,38.93524,-77.05789,20008
+7,Right Proper Brewing,Breweries,$,4.5,73,N/A,38.926755,-76.993071,20017
+8,The Rooftop,Lounges,$$$,2.9,104,N/A,38.91081,-77.04565,20036
+9,Supra,Bars,$$$,4.1,763,N/A,38.906,-77.026725,20001
+10,Rooftop Pool and Bar,Swimming Pools,N/A,4.5,2,N/A,38.895265,-77.0107551,20001
+11,Solace Outpost,Sports Bars,N/A,3.8,54,N/A,38.87045189588523,-77.00714318220898,20003
+12,The Midlands Beer Garden,Beer Bar,$$,4.0,187,N/A,38.9318450441098,-77.0234600454569,20010
+13,Never Looked Better,Cocktail Bars,$$,4.1,98,N/A,38.90653026947325,-77.02456047027019,20001
+14,Living Room Bar,Bars,$$,4.3,10,N/A,38.8967984,-77.0327448,20004
+15,CityBar,Cocktail Bars,$$,3.5,52,N/A,38.882966,-77.018087,20024
+16,Sixty Vines,Wine Bars,$$$,4.6,97,N/A,38.90185549242839,-77.0493245,20037
+17,Exiles Bar,Bars,$$,4.3,119,N/A,38.91679,-77.0373199,20009
+18,Boardwalk Bar & Arcade,Bars,$$,3.0,192,N/A,38.87848,-77.02399,20024
+19,Allegory,Bars,N/A,4.2,191,N/A,38.90292,-77.02855,20005
+20,Elephant & Castle,British,$$,3.4,1098,N/A,38.8955765720028,-77.028547874205,20004
+21,Capitol City Brewing Company,Breweries,$$,3.3,1334,N/A,38.90007812801931,-77.02740674448425,20005
+22,Purple Patch,Filipino,$$,4.4,1465,N/A,38.93057,-77.03762,20010
+23,The Bazaar By Jose Andres,Bars,N/A,4.0,311,N/A,38.894108,-77.027582,20004
+24,Salazar,Bars,$$,4.4,184,N/A,38.91469,-77.03155,20009
+25,THROW Social,Cocktail Bars,$$,3.8,339,N/A,38.91448365460386,-76.98406964931621,20001
+26,Vin Sur Vingt,Wine Bars,N/A,4.2,75,N/A,38.910737,-77.0316311,20005
+27,Le Bar,Bars,$$$,3.8,56,N/A,38.90051,-77.03399,20005
+28,Martha Dear,Bars,N/A,4.4,91,N/A,38.929205,-77.037805,20010
+29,Morris American Bar,Cocktail Bars,$$,4.3,228,N/A,38.903683,-77.022099,20001
+30,Crooked Run Fermentation,Breweries,N/A,4.0,27,N/A,38.90721504814073,-76.9978579,20002
+31,The Atlantis,Music Venues,N/A,3.9,14,N/A,38.918152,-77.023643,20001
+32,Nero,Lounges,$$,4.3,179,N/A,38.90603,-77.043164,20036
+33,Live K Karaoke,Karaoke,N/A,3.8,106,N/A,38.87904263468152,-77.02338428866959,20024
+34,Franklin Hall,Beer Bar,$$,3.9,212,N/A,38.9200198621358,-77.0312701951065,20009
+35,Bar Chinois,Chinese,$$,4.2,208,N/A,38.90139,-77.01791,20001
+36,Palette 22 - DC,Bars,N/A,4.8,164,N/A,38.907917,-76.999599,20002
+37,Immigrant Food,New American,$$,4.2,219,N/A,38.90228434195082,-77.02930733940048,20005
+38,Black Whiskey,Whiskey Bars,$$,3.4,174,N/A,38.9092771,-77.032151,20005
+39,Marquee Bar And Lounge,Cocktail Bars,$$$,3.3,11,N/A,38.9227245097016,-77.0537713730169,20008
+40,Easy Tiger Tavern,Salad,N/A,4.8,5,N/A,38.921963,-77.043654,20009
+41,McNamara's Pub & Restaurant,American,$$,4.5,305,N/A,38.853561,-77.0551157267557,22202
+42,Five Iron Golf,Golf,N/A,4.5,40,N/A,38.89705,-77.02151,20004
+43,Makers Union,New American,N/A,4.0,206,N/A,38.87789,-77.0224,20024
+44,McClellan's Retreat,Bars,$$,4.2,222,N/A,38.9143463,-77.04659567291002,20009
+45,Sauf Haus Bier Hall & Garten,German,$$,3.5,363,N/A,38.9063416,-77.0420532,20036
+46,Silver Lyan,Cocktail Bars,$$$,4.3,164,N/A,38.89708534,-77.02443253,20004
+47,Takoda Navy Yard,Beer Gardens,N/A,3.8,69,N/A,38.87482566661665,-77.00605653226376,20003
+48,Streetcar 82 Brewing Co.,Breweries,$$,4.8,65,N/A,38.9493379734435,-76.9429595768452,20781
+49,Right Proper Brewing Company,American,$$,4.0,769,N/A,38.9153595,-77.021347,20001
